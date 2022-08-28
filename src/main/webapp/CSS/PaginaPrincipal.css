@@ -1,0 +1,14 @@
+main{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(97,154,121);
+    background: linear-gradient(270deg, rgba(97,154,121,1) 0%, rgba(166,190,111,1) 50%, rgba(57,165,231,1) 100%);
+}
+
+main h1{
+    color: white;
+    font-family: 'Krub', sans-serif;
+    font-size: 60px;
+}

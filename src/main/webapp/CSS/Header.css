@@ -1,0 +1,17 @@
+.barra-container{
+    padding: 0;
+}
+
+.logo-header{
+    width: 30px;
+    height: 30px;
+    background-image: url("../Images/logo.png");
+    background-size: 100% 100%;
+    background-position: center;
+    margin: 0 auto;
+}
+
+.link-logo-header{
+    display: flex;
+    align-items: center;
+}
