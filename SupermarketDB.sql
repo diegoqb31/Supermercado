@@ -1,0 +1,17 @@
+
+DROP TABLE USUARIOS;
+
+CREATE TABLE USUARIOS(
+ID INT NOT NULL,
+ROL INT NOT NULL,
+NOMBRE VARCHAR(30) NOT NULL,
+CLAVE VARCHAR(30) NOT NULL,
+CORREO VARCHAR(30) NOT NULL,
+CONSTRAINT PK_USUARIOS PRIMARY KEY(ID)
+);
+
+Insert into USUARIOS (ID,ROL,NOMBRE,CLAVE,CORREO) values (402,1,'Diego Quiros','1234','diego@gmail.com');
+Insert into USUARIOS (ID,ROL,NOMBRE,CLAVE,CORREO) values (150,2,'Kevin Brenes','4321','kevin@gmail.com');
+Insert into USUARIOS (ID,ROL,NOMBRE,CLAVE,CORREO) values (370,1,'Jairo Ulloa','1234','jairo@gmail.com');
+
+select * from usuarios;
