@@ -23,7 +23,7 @@
             <div class="logo-login text-center">
             </div>
 
-            <form class="needs-validation" id="form" method="post">
+            <form class="needs-validation" id="form" method="post" action="${pageContext.request.contextPath}/Login">
                 <div class="form-group was-validated">
                     <label class="form-label" for="email">Email</label>
                     <input class="form-control" type="email" id="email" required>
@@ -51,6 +51,21 @@
     </main>
 </body>
 <script src="JS/jquery-3.6.0.min.js" type="text/javascript"></script>
-<script src="JS/Login.js" type="text/javascript"></script>
+
+<script>
+    (function ($) {
+        var url = '${pageContext.request.contextPath}/hello';
+
+        $.ajax({
+            url: url,
+            success: function (response) {
+                console.log(response);
+            }
+        })
+    })(jQuery);
+</script>
+
+<!-- <script src="JS/Login.js" type="text/javascript"></script> -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 
 </html>
