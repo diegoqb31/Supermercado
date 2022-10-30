@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d4632b01-dcee-4752-861b-f5085eb5e1e7" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/build/built-jar.properties" beforeDir="false" afterPath="$PROJECT_DIR$/build/built-jar.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/bo/UsuarioBO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/bo/UsuarioBO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/dao/UsuarioDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/dao/UsuarioDAO.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/db/Conexion.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/db/Conexion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/entity/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/entity/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/test/Test.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/test/Test.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/views/ListadoEjemplo$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/views/ListadoEjemplo$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/views/ListadoEjemplo.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/views/ListadoEjemplo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/views/Login$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/views/Login$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/views/Login$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/views/Login$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/views/Login$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/views/Login$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/views/Login$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/views/Login$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/views/Login.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/views/Login.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/views/MenuPrincipalCajero$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/views/MenuPrincipalCajero$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/views/MenuPrincipalCajero$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/views/MenuPrincipalCajero$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/views/MenuPrincipalCajero$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/views/MenuPrincipalCajero$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/classes/supermarket/views/MenuPrincipalCajero.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/supermarket/views/MenuPrincipalCajero.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/README.TXT" beforeDir="false" afterPath="$PROJECT_DIR$/dist/README.TXT" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/Supermarket.jar" beforeDir="false" afterPath="$PROJECT_DIR$/dist/Supermarket.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dist/lib/ojdbc8.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="2GpcFmpZfTZrHb6uSTePgZ6VmC8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+  </component>
+  <component name="RunManager">
+    <configuration name="Tomcat 9.0.65" type="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory" factoryName="Remote" APPLICATION_SERVER_NAME="Tomcat 9.0.65" ALTERNATIVE_JRE_ENABLED="false" nameIsGenerated="true">
+      <option name="LOCAL" value="false" />
+      <deployment />
+      <server-settings>
+        <data>
+          <option name="targets">
+            <list>
+              <WatchedTargetModelImpl>
+                <option name="name" value="CONTEXT_XML" />
+                <option name="transportStagingTarget">
+                  <TransportTarget>
+                    <option name="id" value="95c95f7a-5792-45d1-a0c3-d90bb05fd7cd" />
+                    <id>95c95f7a-5792-45d1-a0c3-d90bb05fd7cd</id>
+                  </TransportTarget>
+                </option>
+                <option name="watchedLocalPath" value="" />
+                <watched-path />
+                <name>CONTEXT_XML</name>
+                <transport-target>
+                  <TransportTarget>
+                    <option name="id" value="95c95f7a-5792-45d1-a0c3-d90bb05fd7cd" />
+                    <id>95c95f7a-5792-45d1-a0c3-d90bb05fd7cd</id>
+                  </TransportTarget>
+                </transport-target>
+              </WatchedTargetModelImpl>
+              <StagingTargetModelImpl>
+                <option name="name" value="STAGING" />
+                <option name="stagingRemotePath" value="" />
+                <option name="transportStagingTarget">
+                  <TransportTarget>
+                    <option name="id" value="2857cef1-02ef-431a-9aa0-0ca08f558ff2" />
+                    <id>2857cef1-02ef-431a-9aa0-0ca08f558ff2</id>
+                  </TransportTarget>
+                </option>
+                <staging-path />
+                <name>STAGING</name>
+                <transport-target>
+                  <TransportTarget>
+                    <option name="id" value="2857cef1-02ef-431a-9aa0-0ca08f558ff2" />
+                    <id>2857cef1-02ef-431a-9aa0-0ca08f558ff2</id>
+                  </TransportTarget>
+                </transport-target>
+              </StagingTargetModelImpl>
+            </list>
+          </option>
+          <option name="transportHostId" />
+        </data>
+      </server-settings>
+      <predefined_log_file enabled="true" id="Tomcat" />
+      <predefined_log_file enabled="true" id="TOMCAT_LOCALHOST_LOG_ID" />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="60762" />
+        <option name="LOCAL" value="false" />
+      </RunnerSettings>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d4632b01-dcee-4752-861b-f5085eb5e1e7" name="Changes" comment="" />
+      <created>1667088865159</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1667088865159</updated>
+      <workItem from="1667088866713" duration="85000" />
+      <workItem from="1667089235870" duration="1047000" />
+      <workItem from="1667092278297" duration="147000" />
+      <workItem from="1667092578473" duration="638000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
