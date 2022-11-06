@@ -1,6 +1,8 @@
 package supermarket.dao;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -15,7 +17,7 @@ public class UsuarioDAO {
     
     public String agregarUsuario(Connection con, Usuario usu){
         PreparedStatement pst = null;
-        String sql = "Insert into USUARIOS (ID,ROL,NOMBRE,CLAVE,CORREO) "
+        String sql = "Insert into USUARIO (ID,ROL,NOMBRE,CLAVE,CORREO) "
                 + "values (?,?,?,?,?)";
         try {
             pst = con.prepareStatement(sql);
@@ -78,7 +80,7 @@ public class UsuarioDAO {
         String [] columnas = {"ID","ROL","NOMBRE","CLAVE","CORREO"};
         model = new DefaultTableModel(null, columnas);
         
-        String sql = "SELECT * FROM usuarios ORDER BY id";
+        String sql = "SELECT * FROM usuario ORDER BY id";
         
         String [] filas = new String[7];
         Statement st = null; 
@@ -96,6 +98,39 @@ public class UsuarioDAO {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No se puede listar la tabla");
         }   
+    }
+    
+    public Usuario from (ResultSet rs){
+        try {
+            Usuario r= new Usuario();
+            r.setId(Integer.parseInt(rs.getString("id")));
+            r.setRol(Integer.parseInt(rs.getString("rol")));
+            r.setNombre(rs.getString("nombre"));
+            r.setClave(rs.getString("clave"));
+            r.setCorreo(rs.getString("correo"));
+            return r;
+        } catch (SQLException ex) {
+            return null;
+        }
+    }
+    
+    public List<Usuario> listarTodos(Connection con){
+       
+        String sql = "SELECT * FROM usuario ORDER BY id";
+        List<Usuario> r= new ArrayList<>();
+        String [] filas = new String[7];
+        Statement st = null; 
+        ResultSet rs = null;
+        try {
+            st = con.createStatement();
+            rs = st.executeQuery(sql);
+            while(rs.next()){
+                r.add(from(rs));
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se puede listar la tabla");
+        }   
+        return r;
     }
     
     
