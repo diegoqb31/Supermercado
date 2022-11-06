@@ -25,7 +25,7 @@ public class UsuarioBO {
     private UsuarioDAO udao = new UsuarioDAO();
     
     public String agregarUsuario(Usuario usu){
-        Connection conn = Conexion.getConnection();
+        Connection conn = Conexion.getConnection(Conexion.usuarioLogeado);
         try {
             mensaje = udao.agregarUsuario(conn, usu);
             //conn.rollback();
@@ -44,7 +44,7 @@ public class UsuarioBO {
     }
     
     public String modificarUsuario(Usuario usu){
-        Connection conn = Conexion.getConnection();
+        Connection conn = Conexion.getConnection(Conexion.usuarioLogeado);
         try {
             mensaje = udao.modificarUsuario(conn, usu);
             //conn.rollback();
@@ -63,7 +63,7 @@ public class UsuarioBO {
     }
     
     public String eliminarUsuario(int id){
-        Connection conn = Conexion.getConnection();
+        Connection conn = Conexion.getConnection(Conexion.usuarioLogeado);
         try {
             mensaje = udao.eliminarUsuario(conn, id);
             //conn.rollback();
@@ -82,7 +82,7 @@ public class UsuarioBO {
     }
     
     public void listarUsuario(JTable tabla){
-        Connection conn = Conexion.getConnection();
+        Connection conn = Conexion.getConnection(Conexion.usuarioLogeado);
         udao.listarUsuario(conn, tabla);
         try {
             conn.close();
@@ -92,7 +92,7 @@ public class UsuarioBO {
     }
     
     public List<Usuario> listarTodo(){
-        Connection conn = Conexion.getConnection();
+        Connection conn = Conexion.getConnection(Conexion.usuarioLogeado);
         List<Usuario> lista = new ArrayList<>();
         lista = udao.listarTodos(conn);
         /*for(Usuario u: lista){
@@ -115,6 +115,8 @@ public class UsuarioBO {
                 logeado = u;
             }
         }
+        Conexion.usuarioLogeado = logeado;
         return logeado;
     }
+    
 }

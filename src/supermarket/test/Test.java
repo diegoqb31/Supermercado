@@ -49,18 +49,18 @@ public class Test {
     public void cargarData(){
         usu.setId(101);
         usu.setRol(1);
-        usu.setNombre("Cajero-1");
+        usu.setNombre("Cajero1");
         usu.setCorreo("cajero1@hotmail.com");
-        usu.setClave("1234");
+        usu.setClave("Cajero1");
         mensaje = ubo.agregarUsuario(usu);
         System.out.println(mensaje);
         
         usu = new Usuario();
         usu.setId(102);
         usu.setRol(1);
-        usu.setNombre("Cajero-2");
+        usu.setNombre("Cajero2");
         usu.setCorreo("cajero2@hotmail.com");
-        usu.setClave("1234");
+        usu.setClave("Cajero2");
         mensaje = ubo.agregarUsuario(usu);
         System.out.println(mensaje);
         
@@ -68,27 +68,27 @@ public class Test {
         usu = new Usuario();
         usu.setId(103);
         usu.setRol(1);
-        usu.setNombre("Cajero-3");
+        usu.setNombre("Cajero3");
         usu.setCorreo("cajero3@hotmail.com");
-        usu.setClave("1234");
+        usu.setClave("Cajero3");
         mensaje = ubo.agregarUsuario(usu);
         System.out.println(mensaje);
         
         usu = new Usuario();
         usu.setId(201);
         usu.setRol(2);
-        usu.setNombre("Gerente-1");
+        usu.setNombre("Gerente1");
         usu.setCorreo("gerente1@hotmail.com");
-        usu.setClave("1234");
+        usu.setClave("Gerente1");
         mensaje = ubo.agregarUsuario(usu);
         System.out.println(mensaje);
         
         usu = new Usuario();
         usu.setId(202);
         usu.setRol(2);
-        usu.setNombre("Gerente-2");
+        usu.setNombre("Gerente2");
         usu.setCorreo("gerente2@hotmail.com");
-        usu.setClave("1234");
+        usu.setClave("Gerente2");
         mensaje = ubo.agregarUsuario(usu);
         System.out.println(mensaje);
         
@@ -96,54 +96,54 @@ public class Test {
         usu = new Usuario();
         usu.setId(203);
         usu.setRol(2);
-        usu.setNombre("Gerente-3");
+        usu.setNombre("Gerente3");
         usu.setCorreo("gerente3@hotmail.com");
-        usu.setClave("1234");
+        usu.setClave("Gerente3");
         mensaje = ubo.agregarUsuario(usu);
         System.out.println(mensaje);
         
         usu = new Usuario();
         usu.setId(204);
         usu.setRol(2);
-        usu.setNombre("Gerente-4");
+        usu.setNombre("Gerente4");
         usu.setCorreo("gerente4@hotmail.com");
-        usu.setClave("1234");
+        usu.setClave("Gerente4");
         mensaje = ubo.agregarUsuario(usu);
         System.out.println(mensaje);
         
         usu = new Usuario();
         usu.setId(205);
         usu.setRol(2);
-        usu.setNombre("Gerente-5");
+        usu.setNombre("Gerente5");
         usu.setCorreo("gerente5@hotmail.com");
-        usu.setClave("1234");
+        usu.setClave("Gerente5");
         mensaje = ubo.agregarUsuario(usu);
         System.out.println(mensaje);
         
         usu = new Usuario();
         usu.setId(206);
         usu.setRol(2);
-        usu.setNombre("Gerente-6");
+        usu.setNombre("Gerente6");
         usu.setCorreo("gerente6@hotmail.com");
-        usu.setClave("1234");
+        usu.setClave("Gerente6");
         mensaje = ubo.agregarUsuario(usu);
         System.out.println(mensaje);
         
         usu = new Usuario();
         usu.setId(301);
         usu.setRol(3);
-        usu.setNombre("Sistemas-1");
+        usu.setNombre("Sistemas1");
         usu.setCorreo("Sistemas1@hotmail.com");
-        usu.setClave("1234");
+        usu.setClave("Sistemas1");
         mensaje = ubo.agregarUsuario(usu);
         System.out.println(mensaje);
         
         usu = new Usuario();
         usu.setId(302);
         usu.setRol(3);
-        usu.setNombre("Sistemas-2");
+        usu.setNombre("Sistemas2");
         usu.setCorreo("Sistemas2@hotmail.com");
-        usu.setClave("1234");
+        usu.setClave("Sistemas2");
         mensaje = ubo.agregarUsuario(usu);
         System.out.println(mensaje);
         
@@ -154,6 +154,50 @@ public class Test {
         pro.setPrecio(2500);
         pro.setCantidad(50);
         pro.setEAN("1234567891012");
+        mensaje = pbo.agregarProducto(pro);
+        System.out.println(mensaje);
+        
+        pro = new Producto();
+        pro.setPLU(1567);
+        pro.setTipo("Abarrotes");
+        pro.setDescripcion("Salsa de tomate Banquete");
+        pro.setPeso(0.6f);
+        pro.setPrecio(2300);
+        pro.setCantidad(20);
+        pro.setEAN("4596327846982");
+        mensaje = pbo.agregarProducto(pro);
+        System.out.println(mensaje);
+        
+        pro = new Producto();
+        pro.setPLU(2526);
+        pro.setTipo("Cuidado Personal");
+        pro.setDescripcion("Pasta dental colgate");
+        pro.setPeso(0.3f);
+        pro.setPrecio(1500);
+        pro.setCantidad(30);
+        pro.setEAN("8162875964721");
+        mensaje = pbo.agregarProducto(pro);
+        System.out.println(mensaje);
+        
+        pro = new Producto();
+        pro.setPLU(3821);
+        pro.setTipo("Mercancias");
+        pro.setDescripcion("Audifonos");
+        pro.setPeso(0.4f);
+        pro.setPrecio(6000);
+        pro.setCantidad(10);
+        pro.setEAN("6719258931257");
+        mensaje = pbo.agregarProducto(pro);
+        System.out.println(mensaje);
+        
+        pro = new Producto();
+        pro.setPLU(4537);
+        pro.setTipo("Frescos");
+        pro.setDescripcion("Manzanas Rojas");
+        pro.setPeso(0.4f);
+        pro.setPrecio(400);
+        pro.setCantidad(60);
+        pro.setEAN("7854126478293");
         mensaje = pbo.agregarProducto(pro);
         System.out.println(mensaje);
         

@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 import javax.swing.JOptionPane;
+import supermarket.entity.Usuario;
 
 /**
  *
@@ -14,17 +15,20 @@ public class Conexion {
     
     private static Connection conn = null;
     
-    private static String login = "SYSTEM";
-    private static String clave = "system";
+    public static Usuario usuarioSystem = new Usuario(0, 0, "SYSTEM", "system", "system@gmail.com");
+    public static Usuario usuarioLogeado = usuarioSystem;
+    
+    //private static String login = "SYSTEM";
+    //private static String clave = "system";
     private static String url = "jdbc:oracle:thin:@localhost:1521:xe";
     
-    public static Connection getConnection(){
+    public static Connection getConnection(Usuario logeado){
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
-            conn = DriverManager.getConnection(url,login,clave);
+            conn = DriverManager.getConnection(url,logeado.getNombre(),logeado.getClave());
             conn.setAutoCommit(false);
             if(conn != null){
-                System.out.println("Conexion Exitosa");
+                System.out.println("Conexion Exitosa con el usuario: " + logeado.getNombre());
             }else{
                 System.out.println("ERROR");
             }
@@ -41,6 +45,5 @@ public class Conexion {
             System.out.println("Error al desconectar " + e.getMessage());
         }
     }
-    
     
 }

@@ -80,7 +80,7 @@ public class UsuarioDAO {
         String [] columnas = {"ID","ROL","NOMBRE","CLAVE","CORREO"};
         model = new DefaultTableModel(null, columnas);
         
-        String sql = "SELECT * FROM usuario ORDER BY id";
+        String sql = "SELECT * FROM system.usuario ORDER BY id";
         
         String [] filas = new String[7];
         Statement st = null; 
@@ -116,7 +116,7 @@ public class UsuarioDAO {
     
     public List<Usuario> listarTodos(Connection con){
        
-        String sql = "SELECT * FROM usuario ORDER BY id";
+        String sql = "SELECT * FROM system.usuario ORDER BY id";
         List<Usuario> r= new ArrayList<>();
         String [] filas = new String[7];
         Statement st = null; 

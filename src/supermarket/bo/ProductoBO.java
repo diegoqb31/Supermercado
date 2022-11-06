@@ -21,7 +21,7 @@ public class ProductoBO {
     private ProductoDAO pdao = new ProductoDAO();
     
         public void listarProducto(JTable tabla){
-        Connection conn = Conexion.getConnection();
+        Connection conn = Conexion.getConnection(Conexion.usuarioLogeado);
         pdao.listarProducto(conn, tabla);
         try {
             conn.close();
@@ -31,7 +31,7 @@ public class ProductoBO {
     }
         
     public String agregarProducto(Producto pro){
-        Connection conn = Conexion.getConnection();
+        Connection conn = Conexion.getConnection(Conexion.usuarioLogeado);
         try {
             mensaje = pdao.agregarProducto(conn, pro);
             //conn.rollback();

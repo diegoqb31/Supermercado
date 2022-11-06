@@ -27,7 +27,7 @@ public class ProductoDAO {
         String[] columnas = {"PLU", "TIPO", "DESCRIPCION", "PESO", "PRECIO", "CANTIDAD", "EAN"};
         model = new DefaultTableModel(null, columnas);
 
-        String sql = "SELECT * FROM PRODUCTO ORDER BY PLU";
+        String sql = "SELECT * FROM system.PRODUCTO ORDER BY PLU";
 
         String[] filas = new String[7];
         Statement st = null;
@@ -49,7 +49,7 @@ public class ProductoDAO {
     
      public String agregarProducto(Connection con, Producto pro){
         PreparedStatement pst = null;
-        String sql = "Insert into PRODUCTO (PLU,Tipo,Descripcion,Peso,Precio,Cantidad,EAN) "
+        String sql = "Insert into system.PRODUCTO (PLU,Tipo,Descripcion,Peso,Precio,Cantidad,EAN) "
                 + "values (?,?,?,?,?,?,?)";
         try {
             pst = con.prepareStatement(sql);

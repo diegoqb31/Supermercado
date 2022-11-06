@@ -287,7 +287,9 @@ public class Login extends javax.swing.JFrame {
         }else{
             Usuario usuario = new Usuario();
             usuario.setCorreo(emailTextField.getText());
+            //usuario.setCorreo("cajero1@hotmail.com");
             usuario.setClave(String.valueOf(passwordTextField.getPassword()));
+            //usuario.setClave("Cajero1");
             
             UsuarioBO ubo = new UsuarioBO();
             Usuario logeado = ubo.login(usuario);
@@ -295,7 +297,7 @@ public class Login extends javax.swing.JFrame {
             if(logeado == null){
                     JOptionPane.showMessageDialog(null, "El usuario no existe");
             }else{
-                JOptionPane.showMessageDialog(null, "Logeado correctamente - Usuario: " + usuario.getCorreo() + " - " + usuario.getClave());
+                JOptionPane.showMessageDialog(null, "Logeado correctamente \n¡Bienvenido " + logeado.getNombre() + "!");
                 supermarket.views.MenuPrincipalCajero menuCajero = new supermarket.views.MenuPrincipalCajero();
                 menuCajero.setVisible(true);
                 this.setVisible(false);
