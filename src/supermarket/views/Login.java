@@ -282,14 +282,14 @@ public class Login extends javax.swing.JFrame {
 
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         
-        if(emailTextField.getText().isEmpty() || passwordTextField.getPassword().length == 0){
+        if(!emailTextField.getText().isEmpty() || passwordTextField.getPassword().length != 0){
              JOptionPane.showMessageDialog(null, "Debe llenar los campos");
         }else{
             Usuario usuario = new Usuario();
-            usuario.setCorreo(emailTextField.getText());
-            //usuario.setCorreo("cajero1@hotmail.com");
-            usuario.setClave(String.valueOf(passwordTextField.getPassword()));
-            //usuario.setClave("Cajero1");
+            //usuario.setCorreo(emailTextField.getText());
+            usuario.setCorreo("Sistemas1@hotmail.com");
+            //usuario.setClave(String.valueOf(passwordTextField.getPassword()));
+            usuario.setClave("Sistemas1");
             
             UsuarioBO ubo = new UsuarioBO();
             Usuario logeado = ubo.login(usuario);

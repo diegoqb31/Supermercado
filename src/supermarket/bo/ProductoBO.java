@@ -6,6 +6,8 @@ package supermarket.bo;
 
 import java.sql.Connection;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JTable;
 import supermarket.dao.ProductoDAO;
 import supermarket.db.Conexion;
@@ -48,4 +50,20 @@ public class ProductoBO {
         }
         return mensaje;
     }
+    
+    public List<Producto> listarTodo(){
+        Connection conn = Conexion.getConnection(Conexion.usuarioLogeado);
+        List<Producto> lista = new ArrayList<>();
+        lista = pdao.listarTodos(conn);
+        /*for(Usuario u: lista){
+            System.out.println("Usuario: " + u.getNombre() + "\n");
+        }*/
+        try {
+            conn.close();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return lista;
+    }
+    
 }

@@ -9,6 +9,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -45,6 +47,39 @@ public class ProductoDAO {
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, "No se puede listar la tabla");
         }
+    }
+    
+    public Producto from (ResultSet rs){
+        try {
+            Producto r = new Producto();
+            r.setPLU(Integer.parseInt(rs.getString("PLU")));
+            r.setTipo(rs.getString("tipo"));
+            r.setDescripcion(rs.getString("descripcion"));
+            r.setPeso(Float.parseFloat(rs.getString("peso")));
+            r.setPrecio(Float.parseFloat(rs.getString("precio")));
+            r.setCantidad(Integer.parseInt(rs.getString("cantidad")));
+            r.setEAN(rs.getString("EAN"));
+            return r;
+        } catch (SQLException ex) {
+            return null;
+        }
+    }
+    
+    public List<Producto> listarTodos(Connection con) {
+        String sql = "SELECT * FROM system.PRODUCTO ORDER BY PLU";
+        List<Producto> r= new ArrayList<>();
+        Statement st = null;
+        ResultSet rs = null;
+        try {
+            st = con.createStatement();
+            rs = st.executeQuery(sql);
+            while (rs.next()) {
+                r.add(from(rs));
+            }
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "No se puede listar la tabla");
+        }
+        return r;
     }
     
      public String agregarProducto(Connection con, Producto pro){

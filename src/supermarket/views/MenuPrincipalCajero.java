@@ -34,8 +34,9 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
-        jMenu2 = new javax.swing.JMenu();
+        listadoUsuarios = new javax.swing.JMenu();
+        facturar = new javax.swing.JMenu();
+        cerrarSesion = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setBackground(new java.awt.Color(255, 255, 255));
@@ -89,31 +90,45 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
         jMenuBar1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jMenuBar1.setFont(new java.awt.Font("Dialog", 0, 12)); // NOI18N
 
-        jMenu1.setBackground(new java.awt.Color(24, 78, 119));
-        jMenu1.setForeground(new java.awt.Color(245, 249, 250));
-        jMenu1.setText("Listado Ejemplo");
-        jMenu1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu1.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
-        jMenu1.addMouseListener(new java.awt.event.MouseAdapter() {
+        listadoUsuarios.setBackground(new java.awt.Color(24, 78, 119));
+        listadoUsuarios.setForeground(new java.awt.Color(245, 249, 250));
+        listadoUsuarios.setText("Listado Ejemplo");
+        listadoUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        listadoUsuarios.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
+        listadoUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu1MouseClicked(evt);
+                listadoUsuariosMouseClicked(evt);
             }
         });
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(listadoUsuarios);
 
-        jMenu2.setBackground(new java.awt.Color(24, 78, 119));
-        jMenu2.setForeground(new java.awt.Color(245, 249, 250));
-        jMenu2.setText("Cerrar Cesión");
-        jMenu2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jMenu2.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
-        jMenu2.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        jMenu2.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
-        jMenu2.addMouseListener(new java.awt.event.MouseAdapter() {
+        facturar.setBackground(new java.awt.Color(24, 78, 119));
+        facturar.setForeground(new java.awt.Color(245, 249, 250));
+        facturar.setText("Facturar");
+        facturar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        facturar.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
+        facturar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        facturar.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        facturar.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jMenu2MouseClicked(evt);
+                facturarMouseClicked(evt);
             }
         });
-        jMenuBar1.add(jMenu2);
+        jMenuBar1.add(facturar);
+
+        cerrarSesion.setBackground(new java.awt.Color(24, 78, 119));
+        cerrarSesion.setForeground(new java.awt.Color(245, 249, 250));
+        cerrarSesion.setText("Cerrar Cesión");
+        cerrarSesion.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        cerrarSesion.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
+        cerrarSesion.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        cerrarSesion.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        cerrarSesion.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                cerrarSesionMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(cerrarSesion);
 
         setJMenuBar(jMenuBar1);
 
@@ -134,23 +149,31 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jMenu1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu1MouseClicked
+    private void listadoUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listadoUsuariosMouseClicked
         supermarket.views.ListadoEjemplo ejemploTabla = new supermarket.views.ListadoEjemplo();
         ejemploTabla.setVisible(true);
-    }//GEN-LAST:event_jMenu1MouseClicked
+    }//GEN-LAST:event_listadoUsuariosMouseClicked
 
-    private void jMenu2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jMenu2MouseClicked
+    private void cerrarSesionMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_cerrarSesionMouseClicked
         Conexion.usuarioLogeado = Conexion.usuarioSystem;
         supermarket.views.Login login = new supermarket.views.Login();
         login.setVisible(true);
         this.setVisible(false);
-    }//GEN-LAST:event_jMenu2MouseClicked
+    }//GEN-LAST:event_cerrarSesionMouseClicked
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         supermarket.views.BuscarProducto buscarProducto = new supermarket.views.BuscarProducto();
         buscarProducto.setVisible(true);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void facturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facturarMouseClicked
+        // TODO add your handling code here:supermarket.views.BuscarProducto buscarProducto = new supermarket.views.BuscarProducto();
+        supermarket.views.BuscarProducto buscarProducto = new supermarket.views.BuscarProducto();
+        //supermarket.views.CarritoCompras carritoCompras = new supermarket.views.CarritoCompras();
+        buscarProducto.setVisible(true);
+        //carritoCompras.setVisible(true);
+    }//GEN-LAST:event_facturarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -188,12 +211,13 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu cerrarSesion;
+    private javax.swing.JMenu facturar;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu listadoUsuarios;
     // End of variables declaration//GEN-END:variables
 }
