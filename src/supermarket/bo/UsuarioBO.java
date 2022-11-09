@@ -119,4 +119,13 @@ public class UsuarioBO {
         return logeado;
     }
     
+    public Usuario getById(int id){
+        List<Usuario> lista = this.listarTodo();
+        for(Usuario u: lista){
+            if(u.getId() == id){
+                return u;
+            }
+        }
+        return null;
+    }
 }

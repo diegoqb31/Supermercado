@@ -66,4 +66,14 @@ public class ProductoBO {
         return lista;
     }
     
+    public Producto getByPLU(int plu){
+        List<Producto> lista = this.listarTodo();
+        for(Producto p: lista){
+            if(p.getPLU() == plu){
+                return p;
+            }
+        }
+        return null;
+    }
+    
 }

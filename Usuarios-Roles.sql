@@ -124,3 +124,6 @@ grant update (CANTIDAD) on PRODUCTO to gerenteArea;
 grant select on PRODUCTO to CAJERO;
 grant select on usuario to cajero;
 */
+
+
+

@@ -1,7 +1,10 @@
 package supermarket.test;
 
+import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.List;
 import supermarket.bo.*;
+import supermarket.db.Conexion;
 import supermarket.entity.*;
 
 /**
@@ -15,38 +18,19 @@ public class Test {
     ProductoBO pbo = new ProductoBO();
     Producto pro = new Producto();
     
+    FacturaBO fbo = new FacturaBO();
+    Factura fac = new Factura();
+    
+    DetalleFacturaBO dfbo = new DetalleFacturaBO();
+    DetalleFactura dFac = new DetalleFactura();
+    
+    
     String mensaje = "";
     
-    public void insertar(){
-        usu.setId(222);
-        usu.setRol(1);
-        usu.setNombre("Kevin Ulloa");
-        usu.setCorreo("ko@hotmail.com");
-        usu.setClave("1234");
-        mensaje = ubo.agregarUsuario(usu);
-        System.out.println(mensaje);
-    }
-    
-    public void modificar(){
-        usu.setId(222);
-        usu.setRol(2);
-        usu.setNombre("Kevin Brenes");
-        usu.setCorreo("kevin@hotmail.com");
-        usu.setClave("1234");
-        mensaje = ubo.modificarUsuario(usu);
-        System.out.println(mensaje);
-    }
-    
-    public void eliminar(){
-        mensaje = ubo.eliminarUsuario(222);
-        System.out.println(mensaje);
-    }
-    
-    public void listar(){
-        ubo.listarTodo();
-    }
-    
     public void cargarData(){
+        
+        //Usuarios
+        
         usu.setId(101);
         usu.setRol(1);
         usu.setNombre("Cajero1");
@@ -147,6 +131,8 @@ public class Test {
         mensaje = ubo.agregarUsuario(usu);
         System.out.println(mensaje);
         
+        //Productos
+        
         pro.setPLU(1234);
         pro.setTipo("Abarrotes");
         pro.setDescripcion("Atun Calvo");
@@ -201,13 +187,52 @@ public class Test {
         mensaje = pbo.agregarProducto(pro);
         System.out.println(mensaje);
         
+        //Facturas
+        
+        fac.setNumero(1);
+        fac.setSubtotal(0);
+        fac.setTotal(15000);
+        fac.setFecha(new Date());
+        fac.setCantidad(5);
+        
+        usu = new Usuario();
+        usu.setId(103);
+        usu.setRol(1);
+        usu.setNombre("Cajero3");
+        usu.setCorreo("cajero3@hotmail.com");
+        usu.setClave("Cajero3");
+        
+        fac.setCajero(usu);
+        mensaje = fbo.agregarFactura(fac);
+        System.out.println(mensaje);
+        
+        
+        //DetalleFactura
+        
+        dFac.setId(1);
+        dFac.setFactura(fac);
+        dFac.setProducto(pro);
+        dFac.setCantidad(4);
+        dFac.setPrecio(7500);
+        mensaje = dfbo.agregarFactura(dFac);
+        System.out.println(mensaje);
+        
+        
     }
     
     
+    public void listarFacturas(){
+        fbo.listarTodo();
+    }
+    
+    public void listarDetalleFacturas(){
+        dfbo.listarTodo();
+    }
+    
     public static void main(String[] args) {
         Test test = new Test();
-        
-        test.cargarData();
+        test.listarDetalleFacturas();
+       // test.cargarData();
         
     }
 }
