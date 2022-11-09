@@ -32,7 +32,7 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        pruebas = new javax.swing.JButton();
         jMenuBar1 = new javax.swing.JMenuBar();
         listadoUsuarios = new javax.swing.JMenu();
         facturar = new javax.swing.JMenu();
@@ -49,10 +49,10 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
         jLabel3.setForeground(new java.awt.Color(24, 78, 119));
         jLabel3.setText(" ¡Bienvenido!");
 
-        jButton1.setText("borrar luego");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        pruebas.setText("borrar luego");
+        pruebas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                pruebasActionPerformed(evt);
             }
         });
 
@@ -67,7 +67,7 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(244, 244, 244)
-                        .addComponent(jButton1))
+                        .addComponent(pruebas))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(166, 166, 166)
                         .addComponent(jLabel3)))
@@ -81,7 +81,7 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel1)
                 .addGap(88, 88, 88)
-                .addComponent(jButton1)
+                .addComponent(pruebas)
                 .addGap(55, 55, 55))
         );
 
@@ -161,11 +161,12 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
         this.setVisible(false);
     }//GEN-LAST:event_cerrarSesionMouseClicked
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void pruebasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pruebasActionPerformed
         // TODO add your handling code here:
-        supermarket.views.BuscarProducto buscarProducto = new supermarket.views.BuscarProducto();
-        buscarProducto.setVisible(true);
-    }//GEN-LAST:event_jButton1ActionPerformed
+        
+        supermarket.views.DetalleFacturas detalleFacturas = new supermarket.views.DetalleFacturas();
+        detalleFacturas.setVisible(true);
+    }//GEN-LAST:event_pruebasActionPerformed
 
     private void facturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facturarMouseClicked
         // TODO add your handling code here:supermarket.views.BuscarProducto buscarProducto = new supermarket.views.BuscarProducto();
@@ -213,11 +214,11 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu cerrarSesion;
     private javax.swing.JMenu facturar;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JMenu listadoUsuarios;
+    private javax.swing.JButton pruebas;
     // End of variables declaration//GEN-END:variables
 }
