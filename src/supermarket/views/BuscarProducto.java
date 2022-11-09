@@ -166,19 +166,21 @@ public class BuscarProducto extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         int n = productosTable.getModel().getRowCount();
+        Producto p = new Producto();
         for (int i = 0; i < n; i++) {
             if (productosTable.isRowSelected(i)) {
                 String[] filas = new String[7];
                 for (int j = 0; j < 7; j++) {
                     filas[j] = productosTable.getModel().getValueAt(i, j).toString();
                 }
-                carritoCompras.addProducto(filas);
+                System.out.println(filas[0]);
+                //carritoCompras.addProducto(filas);
             }
         }
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void productosTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productosTableMouseClicked
-        
+        Producto p = new Producto();
         if(evt.getClickCount()==2){
             
             //supermarket.views.CarritoCompras carritoCompras = new supermarket.views.CarritoCompras();
@@ -194,7 +196,13 @@ public class BuscarProducto extends javax.swing.JFrame {
                 for (int j = 0; j < 7; j++) {
                     filas[j] = productosTable.getModel().getValueAt(i, j).toString();
                 }
-                carritoCompras.addProducto(filas);
+                p.setPLU(Integer.valueOf(filas[0]));
+                p.setTipo(filas[1]);
+                p.setDescripcion(filas[2]);
+                p.setPeso(Float.valueOf(filas[3]));
+                p.setPrecio(Float.valueOf(filas[4]));
+                p.setCantidad(Integer.valueOf(filas[5]));
+                carritoCompras.addProducto(p);
             }
             }
         }

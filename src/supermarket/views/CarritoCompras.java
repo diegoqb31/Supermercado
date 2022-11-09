@@ -5,7 +5,17 @@
 package supermarket.views;
 
 import java.awt.Component;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 import javax.swing.table.DefaultTableModel;
+import supermarket.bo.DetalleFacturaBO;
+import supermarket.bo.FacturaBO;
+import supermarket.db.Conexion;
+import supermarket.entity.DetalleFactura;
+import supermarket.entity.Factura;
+import supermarket.entity.Producto;
+import supermarket.models.DetalleFacturaTableModel;
 
 /**
  *
@@ -15,6 +25,10 @@ public class CarritoCompras extends javax.swing.JFrame {
 
     String[] columnas = {"PLU", "TIPO", "DESCRIPCION", "PESO", "PRECIO", "CANTIDAD", "EAN"};
     DefaultTableModel model = new DefaultTableModel(null, columnas);
+    List<DetalleFactura> lineasFactura = new ArrayList<>();
+    private DetalleFacturaBO dfbo = new DetalleFacturaBO();
+    private FacturaBO fbo = new FacturaBO();
+    Factura factura = new Factura();
 
     /**
      * Creates new form CarritoCompras
@@ -22,16 +36,36 @@ public class CarritoCompras extends javax.swing.JFrame {
     public CarritoCompras() {
         this.setLocation(1000,225);
         initComponents();
+        factura.setNumero(fbo.listarTodo().size() + 1);
+        factura.setSubtotal(0);
+        factura.setTotal(0);
+        factura.setFecha(new Date());
+        factura.setCantidad(0);
+        factura.setCajero(Conexion.usuarioLogeado);
+        loadLineasFactura();
     }
 
     public void startProducto() {
         model = new DefaultTableModel(null, columnas);
-        jTable1.setModel(model);
+        carritoCompras.setModel(model);
     }
 
-    public void addProducto(String[] Row) {
-        model.addRow(Row);
-        jTable1.setModel(model);
+    public void addProducto(Producto p) {
+        carritoCompras.setModel(new DetalleFacturaTableModel(lineasFactura));
+        DetalleFactura df = new DetalleFactura();
+        df.setId(dfbo.listarTodo().size() + lineasFactura.size());
+        df.setFactura(factura);
+        df.setProducto(p);
+        df.setCantidad(1);
+        df.setPrecio(p.getPrecio());
+        lineasFactura.add(df);
+        for(DetalleFactura d: lineasFactura){
+            System.out.println(d.getId() + " - " + d.getProducto().getDescripcion() );
+        }
+    }
+    
+    public void loadLineasFactura(){
+        carritoCompras.setModel(new DetalleFacturaTableModel(lineasFactura));
     }
 
     /**
@@ -45,13 +79,13 @@ public class CarritoCompras extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        carritoCompras = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        carritoCompras.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -62,7 +96,7 @@ public class CarritoCompras extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(carritoCompras);
 
         jButton1.setText("Factura Final");
 
@@ -150,10 +184,10 @@ public class CarritoCompras extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JTable carritoCompras;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
     // End of variables declaration//GEN-END:variables
 }
