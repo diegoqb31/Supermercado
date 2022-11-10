@@ -52,16 +52,47 @@ public class CarritoCompras extends javax.swing.JFrame {
 
     public void addProducto(Producto p) {
         carritoCompras.setModel(new DetalleFacturaTableModel(lineasFactura));
-        DetalleFactura df = new DetalleFactura();
+        if(verificarProducto(p) != null){
+            for(DetalleFactura df: lineasFactura){
+                if(df.getProducto().getPLU() == p.getPLU()){
+                    df.setCantidad(df.getCantidad() + 1);
+                    df.setPrecio(df.getPrecio() + p.getPrecio());
+                    Total.setText(String.valueOf(getTotal()));
+                    factura.setTotal(getTotal());
+                }
+            }
+        }else{
+            DetalleFactura df = new DetalleFactura();
         df.setId(dfbo.listarTodo().size() + lineasFactura.size());
         df.setFactura(factura);
         df.setProducto(p);
         df.setCantidad(1);
         df.setPrecio(p.getPrecio());
         lineasFactura.add(df);
-        for(DetalleFactura d: lineasFactura){
+        factura.setTotal(getTotal());
+        Total.setText(String.valueOf(getTotal()));
+        /*for(DetalleFactura d: lineasFactura){
             System.out.println(d.getId() + " - " + d.getProducto().getDescripcion() );
+        }*/
         }
+        
+    }
+    
+    public float getTotal(){
+        float total = 0;
+        for(DetalleFactura df: lineasFactura){
+            total = total + df.getPrecio();
+        }
+        return total;
+    }
+    
+    public DetalleFactura verificarProducto(Producto p){
+        for(DetalleFactura df: lineasFactura){
+            if(df.getProducto().getPLU() == p.getPLU()){
+                return df;
+            }
+        }
+        return null;
     }
     
     public void loadLineasFactura(){
@@ -82,6 +113,8 @@ public class CarritoCompras extends javax.swing.JFrame {
         carritoCompras = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
+        Total = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -98,38 +131,50 @@ public class CarritoCompras extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(carritoCompras);
 
-        jButton1.setText("Factura Final");
+        jButton1.setText("Facturar");
 
-        jLabel1.setText("Carrito de compar");
+        jLabel1.setText("Carrito de compras");
+
+        jLabel2.setText("Total:");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(49, 49, 49)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel2)
+                        .addGap(52, 52, 52)
+                        .addComponent(Total)
+                        .addGap(8, 8, 8))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(42, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(280, 280, 280))
-            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(49, 49, 49)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 567, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(280, 280, 280)
-                        .addComponent(jButton1)))
-                .addContainerGap(42, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(280, 280, 280))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addGap(285, 285, 285))))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(91, Short.MAX_VALUE)
+                .addContainerGap(97, Short.MAX_VALUE)
                 .addComponent(jLabel1)
                 .addGap(28, 28, 28)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(32, 32, 32)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Total)
+                    .addComponent(jLabel2))
+                .addGap(30, 30, 30)
                 .addComponent(jButton1)
-                .addGap(77, 77, 77))
+                .addGap(25, 25, 25))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -184,9 +229,11 @@ public class CarritoCompras extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel Total;
     private javax.swing.JTable carritoCompras;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
