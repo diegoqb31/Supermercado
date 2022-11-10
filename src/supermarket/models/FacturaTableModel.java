@@ -1,5 +1,6 @@
 
 package supermarket.models;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import javax.swing.table.AbstractTableModel;
 import javax.swing.table.TableModel;
@@ -36,7 +37,7 @@ public class FacturaTableModel extends AbstractTableModel implements TableModel{
             case 0: return p.getNumero();
             case 1:return p.getSubtotal();
             case 2:return p.getTotal();
-            case 3:return p.getFecha();
+            case 3:return new SimpleDateFormat("dd/MM/yyyy").format(p.getFecha());
             case 4:return p.getCantidad();
             case 5:return p.getCajero().getId();
             default: return "";

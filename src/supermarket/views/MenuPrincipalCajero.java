@@ -104,7 +104,7 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
 
         facturar.setBackground(new java.awt.Color(24, 78, 119));
         facturar.setForeground(new java.awt.Color(245, 249, 250));
-        facturar.setText("Facturar");
+        facturar.setText("Ventas");
         facturar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         facturar.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
         facturar.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
