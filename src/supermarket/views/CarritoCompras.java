@@ -8,6 +8,7 @@ import java.awt.Component;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import supermarket.bo.DetalleFacturaBO;
 import supermarket.bo.FacturaBO;
@@ -29,6 +30,7 @@ public class CarritoCompras extends javax.swing.JFrame {
     private DetalleFacturaBO dfbo = new DetalleFacturaBO();
     private FacturaBO fbo = new FacturaBO();
     Factura factura = new Factura();
+    supermarket.views.BuscarProducto buscarproducto;
 
     /**
      * Creates new form CarritoCompras
@@ -36,6 +38,19 @@ public class CarritoCompras extends javax.swing.JFrame {
     public CarritoCompras() {
         this.setLocation(1000,225);
         initComponents();
+        factura.setNumero(fbo.listarTodo().size() + 1);
+        factura.setSubtotal(0);
+        factura.setTotal(0);
+        factura.setFecha(new Date());
+        factura.setCantidad(0);
+        factura.setCajero(Conexion.usuarioLogeado);
+        loadLineasFactura();
+    }
+    
+    public CarritoCompras(supermarket.views.BuscarProducto buscarproducto) {
+        this.setLocation(1000,225);
+        initComponents();
+        this.buscarproducto = buscarproducto;
         factura.setNumero(fbo.listarTodo().size() + 1);
         factura.setSubtotal(0);
         factura.setTotal(0);
@@ -63,19 +78,28 @@ public class CarritoCompras extends javax.swing.JFrame {
             }
         }else{
             DetalleFactura df = new DetalleFactura();
-        df.setId(dfbo.listarTodo().size() + lineasFactura.size());
+        df.setId(lineasFactura.size() + 1);
         df.setFactura(factura);
         df.setProducto(p);
         df.setCantidad(1);
         df.setPrecio(p.getPrecio());
         lineasFactura.add(df);
         factura.setTotal(getTotal());
+        factura.setCantidad(lineasFactura.size());
         Total.setText(String.valueOf(getTotal()));
         /*for(DetalleFactura d: lineasFactura){
             System.out.println(d.getId() + " - " + d.getProducto().getDescripcion() );
         }*/
         }
         
+    }
+    
+    public void setIdDb(){
+        int i = 1;
+        for(DetalleFactura df: lineasFactura){
+            df.setId(dfbo.listarTodo().size() + i);
+            i++;
+        }
     }
     
     public float getTotal(){
@@ -111,7 +135,7 @@ public class CarritoCompras extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         carritoCompras = new javax.swing.JTable();
-        jButton1 = new javax.swing.JButton();
+        Facturar = new javax.swing.JButton();
         jLabel1 = new javax.swing.JLabel();
         Total = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
@@ -131,7 +155,12 @@ public class CarritoCompras extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(carritoCompras);
 
-        jButton1.setText("Facturar");
+        Facturar.setText("Facturar");
+        Facturar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FacturarMouseClicked(evt);
+            }
+        });
 
         jLabel1.setText("Carrito de compras");
 
@@ -158,7 +187,7 @@ public class CarritoCompras extends javax.swing.JFrame {
                         .addComponent(jLabel1)
                         .addGap(280, 280, 280))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
+                        .addComponent(Facturar)
                         .addGap(285, 285, 285))))
         );
         jPanel1Layout.setVerticalGroup(
@@ -173,7 +202,7 @@ public class CarritoCompras extends javax.swing.JFrame {
                     .addComponent(Total)
                     .addComponent(jLabel2))
                 .addGap(30, 30, 30)
-                .addComponent(jButton1)
+                .addComponent(Facturar)
                 .addGap(25, 25, 25))
         );
 
@@ -192,6 +221,19 @@ public class CarritoCompras extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void FacturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FacturarMouseClicked
+        setIdDb();
+        String mensaje = fbo.agregarFactura(factura);
+        System.out.println(mensaje);
+        for(DetalleFactura df: lineasFactura){
+            mensaje = dfbo.agregarFactura(df);
+            System.out.println(mensaje);
+        }
+        JOptionPane.showMessageDialog(null, "¡Factura realizada!");
+        buscarproducto.setVisible(false);
+        this.setVisible(false);
+    }//GEN-LAST:event_FacturarMouseClicked
 
     /**
      * @param args the command line arguments
@@ -229,9 +271,9 @@ public class CarritoCompras extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Facturar;
     private javax.swing.JLabel Total;
     private javax.swing.JTable carritoCompras;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;

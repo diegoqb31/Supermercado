@@ -170,10 +170,8 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
 
     private void facturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facturarMouseClicked
         // TODO add your handling code here:supermarket.views.BuscarProducto buscarProducto = new supermarket.views.BuscarProducto();
-        supermarket.views.BuscarProducto buscarProducto = new supermarket.views.BuscarProducto();
-        //supermarket.views.CarritoCompras carritoCompras = new supermarket.views.CarritoCompras();
-        buscarProducto.setVisible(true);
-        //carritoCompras.setVisible(true);
+        supermarket.views.Facturar facturar = new supermarket.views.Facturar();
+        facturar.setVisible(true);
     }//GEN-LAST:event_facturarMouseClicked
 
     /**

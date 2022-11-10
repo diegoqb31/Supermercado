@@ -164,5 +164,5 @@ select * from BitacoraTablasMaestras;
 
 select * from BitacoraFactura;
 */
-
-select * from BitacoraFactura;
+select * from Factura;
+select * from DETALLE_Factura;
