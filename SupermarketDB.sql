@@ -150,6 +150,16 @@ END CONTROL_FACTURAS;
 /
 
 
+CREATE OR REPLACE TRIGGER CONTROL_DETALLE_FACTURAS
+BEFORE INSERT OR UPDATE OR DELETE
+ON DETALLE_FACTURA
+FOR EACH ROW
+BEGIN
+     prc_compra(:NEW.PLU, :NEW.CANTIDAD);
+END CONTROL_DETALLE_FACTURAS;
+/
+
+
 /*
 Insert into USUARIO (ID,ROL,NOMBRE,CLAVE,CORREO) values (402,1,'Diego Quiros','1234','diego@gmail.com');
 Insert into USUARIO (ID,ROL,NOMBRE,CLAVE,CORREO) values (150,2,'Kevin Brenes','4321','kevin@gmail.com');
@@ -163,6 +173,12 @@ select * from usuario;
 select * from BitacoraTablasMaestras;
 
 select * from BitacoraFactura;
-*/
+
+select * from usuario;
 select * from Factura;
 select * from DETALLE_Factura;
+select * from BitacoraFactura;
+*/
+
+
+

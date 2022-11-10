@@ -105,8 +105,6 @@ begin
   update PRODUCTO
   set    CANTIDAD  = (CANTIDAD - PCantPro)
   where  PLU   = PId;
-  commit;
- 
 end prc_compra;
 /
 show error
