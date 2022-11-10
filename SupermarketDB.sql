@@ -180,5 +180,3 @@ select * from DETALLE_Factura;
 select * from BitacoraFactura;
 */
 
-
-
