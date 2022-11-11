@@ -217,7 +217,7 @@ public class BuscarProducto extends javax.swing.JFrame {
     }//GEN-LAST:event_volverActionPerformed
 
     private void volverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volverMouseClicked
-        supermarket.views.Facturar facturar = new supermarket.views.Facturar();
+        supermarket.views.FacturarMenu facturar = new supermarket.views.FacturarMenu();
         carritoCompras.setVisible(false);
         facturar.setVisible(true);
         this.setVisible(false);

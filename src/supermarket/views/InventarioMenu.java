@@ -8,12 +8,12 @@ package supermarket.views;
  *
  * @author XPC
  */
-public class Facturar extends javax.swing.JFrame {
+public class InventarioMenu extends javax.swing.JFrame {
 
     /**
-     * Creates new form Facturar
+     * Creates new form InventarioMenu
      */
-    public Facturar() {
+    public InventarioMenu() {
         initComponents();
     }
 
@@ -30,8 +30,10 @@ public class Facturar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
-        Facturar = new javax.swing.JMenu();
-        Facturas = new javax.swing.JMenu();
+        inventario = new javax.swing.JMenu();
+        nuevoProducto = new javax.swing.JMenu();
+        actualizarProducto = new javax.swing.JMenu();
+        eliminarProducto = new javax.swing.JMenu();
         volver = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -42,7 +44,7 @@ public class Facturar extends javax.swing.JFrame {
 
         jLabel3.setFont(new java.awt.Font("Brush Script MT", 1, 36)); // NOI18N
         jLabel3.setForeground(new java.awt.Color(24, 78, 119));
-        jLabel3.setText("Área de Ventas");
+        jLabel3.setText("Área de Productos");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -51,46 +53,68 @@ public class Facturar extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(216, 216, 216)
-                        .addComponent(jLabel1))
+                        .addGap(111, 111, 111)
+                        .addComponent(jLabel3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(145, 145, 145)
-                        .addComponent(jLabel3)))
-                .addContainerGap(145, Short.MAX_VALUE))
+                        .addGap(214, 214, 214)
+                        .addComponent(jLabel1)))
+                .addContainerGap(119, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(86, Short.MAX_VALUE)
+                .addContainerGap(64, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(35, 35, 35)
+                .addGap(28, 28, 28)
                 .addComponent(jLabel1)
-                .addGap(136, 136, 136))
+                .addGap(165, 165, 165))
         );
 
         jMenuBar1.setBackground(new java.awt.Color(24, 78, 119));
 
-        Facturar.setBackground(new java.awt.Color(24, 78, 119));
-        Facturar.setForeground(new java.awt.Color(245, 249, 250));
-        Facturar.setText("Facturar");
-        Facturar.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
-        Facturar.addMouseListener(new java.awt.event.MouseAdapter() {
+        inventario.setBackground(new java.awt.Color(24, 78, 119));
+        inventario.setForeground(new java.awt.Color(245, 249, 250));
+        inventario.setText("Inventario");
+        inventario.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
+        inventario.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                FacturarMouseClicked(evt);
+                inventarioMouseClicked(evt);
             }
         });
-        jMenuBar1.add(Facturar);
+        jMenuBar1.add(inventario);
 
-        Facturas.setBackground(new java.awt.Color(24, 78, 119));
-        Facturas.setForeground(new java.awt.Color(245, 249, 250));
-        Facturas.setText("Listar Ventas");
-        Facturas.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
-        Facturas.addMouseListener(new java.awt.event.MouseAdapter() {
+        nuevoProducto.setBackground(new java.awt.Color(24, 78, 119));
+        nuevoProducto.setForeground(new java.awt.Color(245, 249, 250));
+        nuevoProducto.setText("Nuevo Producto");
+        nuevoProducto.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
+        nuevoProducto.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                FacturasMouseClicked(evt);
+                nuevoProductoMouseClicked(evt);
             }
         });
-        jMenuBar1.add(Facturas);
+        jMenuBar1.add(nuevoProducto);
+
+        actualizarProducto.setBackground(new java.awt.Color(24, 78, 119));
+        actualizarProducto.setForeground(new java.awt.Color(245, 249, 250));
+        actualizarProducto.setText("Actualizar Producto");
+        actualizarProducto.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
+        actualizarProducto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                actualizarProductoMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(actualizarProducto);
+
+        eliminarProducto.setBackground(new java.awt.Color(24, 78, 119));
+        eliminarProducto.setForeground(new java.awt.Color(245, 249, 250));
+        eliminarProducto.setText("Eliminar Producto");
+        eliminarProducto.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
+        eliminarProducto.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                eliminarProductoMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(eliminarProducto);
 
         volver.setBackground(new java.awt.Color(24, 78, 119));
         volver.setForeground(new java.awt.Color(245, 249, 250));
@@ -122,21 +146,25 @@ public class Facturar extends javax.swing.JFrame {
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
+    private void inventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inventarioMouseClicked
+        
+    }//GEN-LAST:event_inventarioMouseClicked
+
+    private void nuevoProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nuevoProductoMouseClicked
+
+    }//GEN-LAST:event_nuevoProductoMouseClicked
+
     private void volverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volverMouseClicked
         this.setVisible(false);
     }//GEN-LAST:event_volverMouseClicked
 
-    private void FacturasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FacturasMouseClicked
-        supermarket.views.ListadoFacturas listadoFacturas = new supermarket.views.ListadoFacturas();
-        listadoFacturas.setVisible(true); 
-        this.setVisible(false);
-    }//GEN-LAST:event_FacturasMouseClicked
+    private void actualizarProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarProductoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_actualizarProductoMouseClicked
 
-    private void FacturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FacturarMouseClicked
-        supermarket.views.BuscarProducto buscarProducto = new supermarket.views.BuscarProducto();
-        buscarProducto.setVisible(true); 
-        this.setVisible(false);
-    }//GEN-LAST:event_FacturarMouseClicked
+    private void eliminarProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarProductoMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_eliminarProductoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -155,31 +183,33 @@ public class Facturar extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Facturar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventarioMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Facturar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventarioMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Facturar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventarioMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Facturar.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(InventarioMenu.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Facturar().setVisible(true);
+                new InventarioMenu().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu Facturar;
-    private javax.swing.JMenu Facturas;
+    private javax.swing.JMenu actualizarProducto;
+    private javax.swing.JMenu eliminarProducto;
+    private javax.swing.JMenu inventario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JMenu nuevoProducto;
     private javax.swing.JMenu volver;
     // End of variables declaration//GEN-END:variables
 }

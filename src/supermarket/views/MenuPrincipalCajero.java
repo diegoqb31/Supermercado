@@ -36,6 +36,7 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
         jMenuBar1 = new javax.swing.JMenuBar();
         listadoUsuarios = new javax.swing.JMenu();
         facturar = new javax.swing.JMenu();
+        inventario = new javax.swing.JMenu();
         cerrarSesion = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -116,6 +117,17 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
         });
         jMenuBar1.add(facturar);
 
+        inventario.setBackground(new java.awt.Color(24, 78, 119));
+        inventario.setForeground(new java.awt.Color(245, 249, 250));
+        inventario.setText("Inventario");
+        inventario.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
+        inventario.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                inventarioMouseClicked(evt);
+            }
+        });
+        jMenuBar1.add(inventario);
+
         cerrarSesion.setBackground(new java.awt.Color(24, 78, 119));
         cerrarSesion.setForeground(new java.awt.Color(245, 249, 250));
         cerrarSesion.setText("Cerrar Cesión");
@@ -170,9 +182,14 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
 
     private void facturarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_facturarMouseClicked
         // TODO add your handling code here:supermarket.views.BuscarProducto buscarProducto = new supermarket.views.BuscarProducto();
-        supermarket.views.Facturar facturar = new supermarket.views.Facturar();
+        supermarket.views.FacturarMenu facturar = new supermarket.views.FacturarMenu();
         facturar.setVisible(true);
     }//GEN-LAST:event_facturarMouseClicked
+
+    private void inventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inventarioMouseClicked
+        supermarket.views.InventarioMenu inventario = new supermarket.views.InventarioMenu();
+        inventario.setVisible(true);
+    }//GEN-LAST:event_inventarioMouseClicked
 
     /**
      * @param args the command line arguments
@@ -212,6 +229,7 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenu cerrarSesion;
     private javax.swing.JMenu facturar;
+    private javax.swing.JMenu inventario;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JMenuBar jMenuBar1;
