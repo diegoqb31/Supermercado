@@ -104,5 +104,45 @@ public class ProductoDAO {
         }
         return mensaje;
     }
+     
+     public String modificarProducto(Connection con, Producto pro){
+        PreparedStatement pst = null;
+        String sql = "UPDATE system.PRODUCTO SET Tipo=?,Descripcion=?,Peso=?,Precio=?"
+                + ",Cantidad=?,EAN=? WHERE PLU=?";
+        try {
+            pst = con.prepareStatement(sql);
+            pst.setString(1, pro.getTipo());
+            pst.setString(2, pro.getDescripcion());
+            pst.setFloat(3, pro.getPeso());
+            pst.setFloat(4, pro.getPrecio());
+            pst.setInt(5, pro.getCantidad());
+            pst.setString(6, pro.getEAN());            
+            pst.setInt(7, pro.getPLU());
+            mensaje = "Modificado Correctamente";
+            pst.execute();
+            pst.close();
+        } catch (SQLException e) 
+        {
+            mensaje = "No se pudo modificar correctamente \n " + e.getMessage();   
+        }
+        return mensaje;
+    }
+     
+     
+     public String eliminarProducto(Connection con, Producto pro){
+        PreparedStatement pst = null;
+        String sql = "DELETE FROM system.PRODUCTO WHERE PLU=?";
+        try {
+            pst = con.prepareStatement(sql);
+            pst.setInt(1, pro.getPLU());
+            mensaje = "Eliminado Correctamente";
+            pst.execute();
+            pst.close();
+        } catch (SQLException e) 
+        {
+            mensaje = "No se pudo eliminar correctamente \n " + e.getMessage();   
+        }
+        return mensaje;
+    }
     
 }

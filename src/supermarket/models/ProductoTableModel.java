@@ -1,5 +1,6 @@
 
 package supermarket.models;
+import java.util.ArrayList;
 import java.util.List;
 import javax.swing.event.TableModelListener;
 import javax.swing.table.AbstractTableModel;
@@ -53,4 +54,19 @@ public class ProductoTableModel extends AbstractTableModel implements TableModel
         return p;
     }
     
+    public ProductoTableModel filter(String value){
+        if(value.isBlank()){
+            return this;
+        }else{
+        ArrayList<Producto> refil = new ArrayList<Producto>();
+        for (Producto p : this.fil){
+            if(Integer.toString(p.getPLU()).contains(value)){
+                refil.add(p);
+            }else if(p.getDescripcion().contains(value)){
+                refil.add(p);
+            }
+        }
+        return new ProductoTableModel(refil);
+    }
+    }    
 }

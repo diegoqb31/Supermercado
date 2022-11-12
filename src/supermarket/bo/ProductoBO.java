@@ -18,11 +18,11 @@ import supermarket.entity.Producto;
  * @author categ
  */
 public class ProductoBO {
-    
+
     private String mensaje = "";
     private ProductoDAO pdao = new ProductoDAO();
-    
-        public void listarProducto(JTable tabla){
+
+    public void listarProducto(JTable tabla) {
         Connection conn = Conexion.getConnection(Conexion.usuarioLogeado);
         pdao.listarProducto(conn, tabla);
         try {
@@ -31,27 +31,65 @@ public class ProductoBO {
             System.out.println(ex.getMessage());
         }
     }
-        
-    public String agregarProducto(Producto pro){
+
+    public String agregarProducto(Producto pro) {
         Connection conn = Conexion.getConnection(Conexion.usuarioLogeado);
         try {
             mensaje = pdao.agregarProducto(conn, pro);
             //conn.rollback();
         } catch (Exception e) {
             mensaje = mensaje + " " + e.getMessage();
-        }finally{
-            try{
-                if(conn != null){
+        } finally {
+            try {
+                if (conn != null) {
                     conn.close();
                 }
-            }catch(Exception e){
+            } catch (Exception e) {
+                mensaje = mensaje + " " + e.getMessage();
+            }
+        }
+        return mensaje;
+    }
+
+    public String modificarProducto(Producto pro) {
+        Connection conn = Conexion.getConnection(Conexion.usuarioLogeado);
+        try {
+            mensaje = pdao.modificarProducto(conn, pro);
+            //conn.rollback();
+        } catch (Exception e) {
+            mensaje = mensaje + " " + e.getMessage();
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e) {
                 mensaje = mensaje + " " + e.getMessage();
             }
         }
         return mensaje;
     }
     
-    public List<Producto> listarTodo(){
+    public String eliminarProducto(Producto pro) {
+        Connection conn = Conexion.getConnection(Conexion.usuarioLogeado);
+        try {
+            mensaje = pdao.eliminarProducto(conn, pro);
+            //conn.rollback();
+        } catch (Exception e) {
+            mensaje = mensaje + " " + e.getMessage();
+        } finally {
+            try {
+                if (conn != null) {
+                    conn.close();
+                }
+            } catch (Exception e) {
+                mensaje = mensaje + " " + e.getMessage();
+            }
+        }
+        return mensaje;
+    }
+
+    public List<Producto> listarTodo() {
         Connection conn = Conexion.getConnection(Conexion.usuarioLogeado);
         List<Producto> lista = new ArrayList<>();
         lista = pdao.listarTodos(conn);
@@ -65,15 +103,15 @@ public class ProductoBO {
         }
         return lista;
     }
-    
-    public Producto getByPLU(int plu){
+
+    public Producto getByPLU(int plu) {
         List<Producto> lista = this.listarTodo();
-        for(Producto p: lista){
-            if(p.getPLU() == plu){
+        for (Producto p : lista) {
+            if (p.getPLU() == plu) {
                 return p;
             }
         }
         return null;
     }
-    
+
 }

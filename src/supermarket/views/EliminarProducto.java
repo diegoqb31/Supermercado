@@ -6,6 +6,7 @@ package supermarket.views;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
 import supermarket.bo.ProductoBO;
 import supermarket.entity.Producto;
 import supermarket.models.ProductoTableModel;
@@ -14,9 +15,8 @@ import supermarket.models.ProductoTableModel;
  *
  * @author categ
  */
-public class BuscarProducto extends javax.swing.JFrame {
+public class EliminarProducto extends javax.swing.JFrame {
 
-    CarritoCompras carritoCompras = new CarritoCompras(this);
     boolean flag = true;
 
     private ProductoBO pbo = new ProductoBO();
@@ -24,7 +24,7 @@ public class BuscarProducto extends javax.swing.JFrame {
     /**
      * Creates new form BuscarProducto
      */
-    public BuscarProducto() {
+    public EliminarProducto() {
         initComponents();
         this.setLocation(300, 200);
         loadProducts();
@@ -44,8 +44,6 @@ public class BuscarProducto extends javax.swing.JFrame {
         jTextField1 = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
         productosTable = new javax.swing.JTable();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
         volver = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -80,21 +78,6 @@ public class BuscarProducto extends javax.swing.JFrame {
         });
         jScrollPane1.setViewportView(productosTable);
 
-        jButton2.setText("ver carrito");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-
-        jButton4.setText("agregar al carrito");
-        jButton4.setToolTipText("");
-        jButton4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton4ActionPerformed(evt);
-            }
-        });
-
         volver.setText("Volver");
         volver.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -123,16 +106,9 @@ public class BuscarProducto extends javax.swing.JFrame {
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 647, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(17, 17, 17)
-                        .addComponent(volver)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton4)))
-                .addGap(25, 25, 25))
+                .addGap(17, 17, 17)
+                .addComponent(volver)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -143,12 +119,8 @@ public class BuscarProducto extends javax.swing.JFrame {
                 .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 270, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jButton4)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(volver))
+                .addGap(59, 59, 59)
+                .addComponent(volver)
                 .addContainerGap(72, Short.MAX_VALUE))
         );
 
@@ -169,32 +141,12 @@ public class BuscarProducto extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        carritoCompras.setVisible(true);
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
-        int n = productosTable.getModel().getRowCount();
-        Producto p = new Producto();
-        for (int i = 0; i < n; i++) {
-            if (productosTable.isRowSelected(i)) {
-                String[] filas = new String[7];
-                for (int j = 0; j < 7; j++) {
-                    filas[j] = productosTable.getModel().getValueAt(i, j).toString();
-                }
-                System.out.println(filas[0]);
-                //carritoCompras.addProducto(filas);
-            }
-        }
-    }//GEN-LAST:event_jButton4ActionPerformed
-
     private void productosTableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_productosTableMouseClicked
         Producto p = new Producto();
         if (evt.getClickCount() == 2) {
 
             //supermarket.views.CarritoCompras carritoCompras = new supermarket.views.CarritoCompras();
             if (flag) {
-                carritoCompras.setVisible(true);
                 this.flag = false;
             }
 
@@ -210,9 +162,11 @@ public class BuscarProducto extends javax.swing.JFrame {
                     p.setDescripcion(filas[2]);
                     p.setPeso(Float.valueOf(filas[3]));
                     p.setPrecio(Float.valueOf(filas[4]));
-                    p.setCantidad(Integer.valueOf(filas[5]));
-                    if (p.getCantidad() > 0) {
-                        carritoCompras.addProducto(p);
+                    p.setCantidad(Integer.valueOf(filas[5]));                  
+                    int select = JOptionPane.showConfirmDialog(null, "esta seguro que desea eliminar "+p.getDescripcion()+" del inventario");
+                    if(select==0){
+                        pbo.eliminarProducto(p);
+                        loadProducts();
                     }
                 }
             }
@@ -225,7 +179,6 @@ public class BuscarProducto extends javax.swing.JFrame {
 
     private void volverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volverMouseClicked
         supermarket.views.FacturarMenu facturar = new supermarket.views.FacturarMenu();
-        carritoCompras.setVisible(false);
         facturar.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_volverMouseClicked
@@ -259,31 +212,30 @@ public class BuscarProducto extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(BuscarProducto.class
+            java.util.logging.Logger.getLogger(EliminarProducto.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(BuscarProducto.class
+            java.util.logging.Logger.getLogger(EliminarProducto.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(BuscarProducto.class
+            java.util.logging.Logger.getLogger(EliminarProducto.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(BuscarProducto.class
+            java.util.logging.Logger.getLogger(EliminarProducto.class
                     .getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
+        //</editor-fold>
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new BuscarProducto().setVisible(true);
+                new EliminarProducto().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;

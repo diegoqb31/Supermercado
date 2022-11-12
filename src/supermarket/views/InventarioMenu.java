@@ -147,11 +147,17 @@ public class InventarioMenu extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void inventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inventarioMouseClicked
-        
+
+        ListarProducto listProd = new ListarProducto();
+        listProd.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_inventarioMouseClicked
 
     private void nuevoProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_nuevoProductoMouseClicked
 
+        AgregarProducto addProd = new AgregarProducto();
+        addProd.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_nuevoProductoMouseClicked
 
     private void volverMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_volverMouseClicked
@@ -160,10 +166,16 @@ public class InventarioMenu extends javax.swing.JFrame {
 
     private void actualizarProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_actualizarProductoMouseClicked
         // TODO add your handling code here:
+        ModificarProducto updateProd = new ModificarProducto();
+        updateProd.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_actualizarProductoMouseClicked
 
     private void eliminarProductoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_eliminarProductoMouseClicked
         // TODO add your handling code here:
+        EliminarProducto removeProd = new EliminarProducto();
+        removeProd.setVisible(true);
+        this.setVisible(false);
     }//GEN-LAST:event_eliminarProductoMouseClicked
 
     /**

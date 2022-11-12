@@ -1,10 +1,7 @@
 package supermarket.test;
 
-import java.time.LocalDateTime;
 import java.util.Date;
-import java.util.List;
 import supermarket.bo.*;
-import supermarket.db.Conexion;
 import supermarket.entity.*;
 
 /**
