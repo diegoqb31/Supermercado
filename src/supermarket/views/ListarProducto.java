@@ -25,7 +25,6 @@ public class ListarProducto extends javax.swing.JFrame {
      */
     public ListarProducto() {
         initComponents();
-        this.setLocation(300,200);
         loadProducts();
     }
 
