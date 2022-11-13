@@ -55,6 +55,7 @@ public class ProductoTableModel extends AbstractTableModel implements TableModel
     }
     
     public ProductoTableModel filter(String value){
+     
         if(value.isBlank()){
             return this;
         }else{
