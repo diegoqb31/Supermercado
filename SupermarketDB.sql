@@ -179,3 +179,6 @@ select * from Factura;
 select * from DETALLE_Factura;
 select * from BitacoraFactura;
 */
+select * from producto;
+
+
