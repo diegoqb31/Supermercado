@@ -39,7 +39,6 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
         listadoUsuarios = new javax.swing.JMenu();
         facturar = new javax.swing.JMenu();
         inventario = new javax.swing.JMenu();
-        buscar = new javax.swing.JMenu();
         cerrarSesion = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -103,7 +102,7 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
 
         listadoUsuarios.setBackground(new java.awt.Color(24, 78, 119));
         listadoUsuarios.setForeground(new java.awt.Color(245, 249, 250));
-        listadoUsuarios.setText("Listado Ejemplo");
+        listadoUsuarios.setText("Usuarios");
         listadoUsuarios.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         listadoUsuarios.setFont(new java.awt.Font("Microsoft YaHei UI Light", 0, 14)); // NOI18N
         listadoUsuarios.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -137,17 +136,6 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
             }
         });
         jMenuBar1.add(inventario);
-
-        buscar.setBackground(new java.awt.Color(24, 78, 119));
-        buscar.setForeground(new java.awt.Color(245, 249, 250));
-        buscar.setText("Buscar Producto");
-        buscar.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
-        buscar.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                buscar1MouseClicked(evt);
-            }
-        });
-        jMenuBar1.add(buscar);
 
         cerrarSesion.setBackground(new java.awt.Color(24, 78, 119));
         cerrarSesion.setForeground(new java.awt.Color(245, 249, 250));
@@ -203,12 +191,6 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
         inventario.setVisible(true);
     }//GEN-LAST:event_inventarioMouseClicked
 
-    private void buscar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_buscar1MouseClicked
-        // TODO add your handling code here:
-        supermarket.views.BusquedaProducto busqueda = new supermarket.views.BusquedaProducto();
-        busqueda.setVisible(true);
-    }//GEN-LAST:event_buscar1MouseClicked
-
     /**
      * @param args the command line arguments
      */
@@ -245,7 +227,6 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenu buscar;
     private javax.swing.JMenu cerrarSesion;
     private javax.swing.JMenu facturar;
     private javax.swing.JMenu inventario;

@@ -148,8 +148,8 @@ public class InventarioMenu extends javax.swing.JFrame {
 
     private void inventarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_inventarioMouseClicked
 
-        ListarProducto listProd = new ListarProducto();
-        listProd.setVisible(true);
+        BusquedaProducto addProd = new BusquedaProducto();
+        addProd.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_inventarioMouseClicked
 
