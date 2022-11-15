@@ -39,6 +39,7 @@ public class FacturaDAO {
         } catch (SQLException e) 
         {
             mensaje = "No se pudo guardar correctamente \n " + e.getMessage();   
+            JOptionPane.showMessageDialog(null, "No se pudo guardar correctamente \n" + e.getMessage());
         }
         return mensaje;
     }
@@ -63,7 +64,7 @@ public class FacturaDAO {
             String csajero = rs.getString("id_cajero");
             u = ubo.getById(Integer.parseInt(rs.getString("id_cajero")));
             */
-            r.setCajero(ubo.getById(Integer.parseInt(rs.getString("id_cajero"))));
+            r.setCajero(ubo.getByIdCajero(Integer.parseInt(rs.getString("id_cajero"))));
             return r;
         } catch (SQLException ex) {
             return null;
@@ -82,7 +83,7 @@ public class FacturaDAO {
                 r.add(from(rs));
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se puede listar la tabla");
+            JOptionPane.showMessageDialog(null, "No se puede listar la tabla factura");
         }
         return r;
     }

@@ -106,6 +106,21 @@ public class UsuarioBO {
         return lista;
     }
     
+    public List<Usuario> listarTodoCajero(){
+        Connection conn = Conexion.getConnection(Conexion.usuarioSystem);
+        List<Usuario> lista = new ArrayList<>();
+        lista = udao.listarTodos(conn);
+        /*for(Usuario u: lista){
+            System.out.println("Usuario: " + u.getNombre() + "\n");
+        }*/
+        try {
+            conn.close();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return lista;
+    }
+    
     
     public Usuario login(Usuario log){
         List<Usuario> listado = this.listarTodo();
@@ -121,6 +136,16 @@ public class UsuarioBO {
     
     public Usuario getById(int id){
         List<Usuario> lista = this.listarTodo();
+        for(Usuario u: lista){
+            if(u.getId() == id){
+                return u;
+            }
+        }
+        return null;
+    }
+    
+    public Usuario getByIdCajero(int id){
+        List<Usuario> lista = this.listarTodoCajero();
         for(Usuario u: lista){
             if(u.getId() == id){
                 return u;

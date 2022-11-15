@@ -37,7 +37,6 @@ public class AgregarProducto extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         txtPLU = new javax.swing.JTextField();
-        txtTIPO = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         txtPESO = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
@@ -140,14 +139,9 @@ public class AgregarProducto extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton3))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createSequentialGroup()
-                                .addGap(190, 190, 190)
-                                .addComponent(txtTIPO, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(jButton2)
-                                .addGap(69, 69, 69)
-                                .addComponent(jLabel1)))
+                        .addComponent(jButton2)
+                        .addGap(69, 69, 69)
+                        .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -228,9 +222,7 @@ public class AgregarProducto extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel9)
                     .addComponent(txtEAN, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 70, Short.MAX_VALUE)
-                .addComponent(txtTIPO, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(30, 30, 30)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton3))
@@ -301,7 +293,6 @@ public class AgregarProducto extends javax.swing.JFrame {
         txtPESO.setText("");
         txtPLU.setText("");
         txtPRECIO.setText("");
-        txtTIPO.setText("");
     }
 
     private boolean checker() {
@@ -418,6 +409,5 @@ public class AgregarProducto extends javax.swing.JFrame {
     private javax.swing.JTextField txtPESO;
     private javax.swing.JTextField txtPLU;
     private javax.swing.JTextField txtPRECIO;
-    private javax.swing.JTextField txtTIPO;
     // End of variables declaration//GEN-END:variables
 }

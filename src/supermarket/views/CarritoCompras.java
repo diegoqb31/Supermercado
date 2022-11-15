@@ -38,7 +38,7 @@ public class CarritoCompras extends javax.swing.JFrame {
     public CarritoCompras() {
         this.setLocation(1000,225);
         initComponents();
-        factura.setNumero(fbo.listarTodo().size() + 1);
+        factura.setNumero(fbo.listarTodoCajero().size() + 1);
         factura.setSubtotal(0);
         factura.setTotal(0);
         factura.setFecha(new Date());
@@ -51,7 +51,7 @@ public class CarritoCompras extends javax.swing.JFrame {
         this.setLocation(1000,225);
         initComponents();
         this.buscarproducto = buscarproducto;
-        factura.setNumero(fbo.listarTodo().size() + 1);
+        factura.setNumero(fbo.listarTodoCajero().size() + 1);
         factura.setSubtotal(0);
         factura.setTotal(0);
         factura.setFecha(new Date());

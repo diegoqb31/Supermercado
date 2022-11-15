@@ -168,6 +168,7 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void listadoUsuariosMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_listadoUsuariosMouseClicked
+        
         supermarket.views.ListadoEjemplo ejemploTabla = new supermarket.views.ListadoEjemplo();
         ejemploTabla.setVisible(true);
     }//GEN-LAST:event_listadoUsuariosMouseClicked

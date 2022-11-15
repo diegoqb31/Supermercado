@@ -6,6 +6,7 @@ import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
+import supermarket.db.Conexion;
 import supermarket.entity.Usuario;
 /**
  *
@@ -96,7 +97,8 @@ public class UsuarioDAO {
             }
             tabla.setModel(model);
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se puede listar la tabla");
+            JOptionPane.showMessageDialog(null, "No se puede listar la tabla usuarios : " + e.getMessage());
+            //JOptionPane.showMessageDialog(null, "El usuario " + Conexion.usuarioLogeado.getNombre() + " no tiene acceso a esta funcion");
         }   
     }
     
@@ -128,7 +130,7 @@ public class UsuarioDAO {
                 r.add(from(rs));
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se puede listar la tabla");
+            JOptionPane.showMessageDialog(null, "No se puede listar la tabla usuarios");
         }   
         return r;
     }

@@ -7,8 +7,8 @@ drop user Gerente1 cascade;
 drop user Gerente2 cascade;
 drop user Gerente3 cascade;
 drop user Gerente4 cascade;
-drop user Gerente5 cascade;
-drop user Gerente6 cascade;
+drop user GerenteG1 cascade;
+drop user GerenteG2 cascade;
 drop user Sistemas1 cascade;
 drop user Sistemas2 cascade;
 
@@ -47,12 +47,12 @@ default tablespace users
 temporary tablespace temp
 quota unlimited on users;
 
-create user Gerente5 identified by Gerente5
+create user GerenteG1 identified by GerenteG1
 default tablespace users
 temporary tablespace temp
 quota unlimited on users;
 
-create user Gerente6 identified by Gerente6
+create user GerenteG2 identified by GerenteG2
 default tablespace users
 temporary tablespace temp
 quota unlimited on users;
@@ -91,8 +91,8 @@ grant gerenteArea to Gerente2;
 grant gerenteArea to Gerente3;
 grant gerenteArea to Gerente4;
 
-grant gerenteGen to Gerente5;
-grant gerenteGen to Gerente6;
+grant gerenteGen to GerenteG1;
+grant gerenteGen to GerenteG2;
 
 grant dba to Sistemas1;
 grant dba to Sistemas2;
@@ -115,7 +115,9 @@ grant update, insert, delete, select on PRODUCTO to gerenteGen;
 grant select on PRODUCTO to gerenteArea;
 grant update (DESCRIPCION) on PRODUCTO to gerenteArea;
 grant update (CANTIDAD) on PRODUCTO to gerenteArea;  
-
+grant select on PRODUCTO to CAJERO;
+grant insert on Factura to CAJERO;
+grant insert, select on Detalle_Factura to CAJERO;
 
 /*De aquí para abajo es para pruebas*/
 /*

@@ -77,7 +77,7 @@ public class ProductoDAO {
                 r.add(from(rs));
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se puede listar la tabla");
+            JOptionPane.showMessageDialog(null, "No se puede listar la tabla productos");
         }
         return r;
     }
@@ -98,9 +98,12 @@ public class ProductoDAO {
             mensaje = "Guardado Correctamente";
             pst.execute();
             pst.close();
+            JOptionPane.showMessageDialog(null, "Producto agregado correctamente");
         } catch (SQLException e) 
         {
-            mensaje = "No se pudo guardar correctamente \n " + e.getMessage();   
+            mensaje = "No se pudo guardar correctamente \n " + e.getMessage();
+            JOptionPane.showMessageDialog(null, "No se pudo guardar correctamente \n" + e.getMessage());
+            
         }
         return mensaje;
     }
@@ -121,9 +124,11 @@ public class ProductoDAO {
             mensaje = "Modificado Correctamente";
             pst.execute();
             pst.close();
+            JOptionPane.showMessageDialog(null, "Producto modificado correctamente");
         } catch (SQLException e) 
         {
-            mensaje = "No se pudo modificar correctamente \n " + e.getMessage();   
+            mensaje = "No se pudo modificar correctamente \n " + e.getMessage(); 
+            JOptionPane.showMessageDialog(null, "No se pudo modificar correctamente \n" + e.getMessage());
         }
         return mensaje;
     }
@@ -138,9 +143,11 @@ public class ProductoDAO {
             mensaje = "Eliminado Correctamente";
             pst.execute();
             pst.close();
+            JOptionPane.showMessageDialog(null, "Producto eliminado correctamente");
         } catch (SQLException e) 
         {
             mensaje = "No se pudo eliminar correctamente \n " + e.getMessage();   
+            JOptionPane.showMessageDialog(null, "No se pudo eliminar correctamente \n" + e.getMessage());
         }
         return mensaje;
     }

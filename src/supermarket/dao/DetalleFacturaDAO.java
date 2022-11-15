@@ -65,7 +65,7 @@ public class DetalleFacturaDAO {
                 r.add(from(rs));
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se puede listar la tabla");
+            JOptionPane.showMessageDialog(null, "No se puede listar la tabla detalle - facturas");
         }
         return r;
     }

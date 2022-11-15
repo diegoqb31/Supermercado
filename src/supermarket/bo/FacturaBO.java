@@ -40,6 +40,19 @@ public class FacturaBO {
         Connection conn = Conexion.getConnection(Conexion.usuarioLogeado);
         List<Factura> lista = new ArrayList<>();
         lista = fdao.listarTodos(conn);
+        
+        try {
+            conn.close();
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return lista;
+    }
+    
+    public List<Factura> listarTodoCajero(){
+        Connection conn = Conexion.getConnection(Conexion.usuarioSystem);
+        List<Factura> lista = new ArrayList<>();
+        lista = fdao.listarTodos(conn);
         /*for(Factura u: lista){
             System.out.println("Factura: " + u.getNumero() + "\n");
         }*/
@@ -52,7 +65,7 @@ public class FacturaBO {
     }
     
     public Factura getByNumero(int numero){
-        List<Factura> lista = this.listarTodo();
+        List<Factura> lista = this.listarTodoCajero();
         for(Factura f: lista){
             if(f.getNumero() == numero){
                 return f;
