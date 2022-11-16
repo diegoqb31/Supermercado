@@ -39,6 +39,7 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
         listadoUsuarios = new javax.swing.JMenu();
         facturar = new javax.swing.JMenu();
         inventario = new javax.swing.JMenu();
+        bitacoras = new javax.swing.JMenu();
         cerrarSesion = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -137,6 +138,15 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
         });
         jMenuBar1.add(inventario);
 
+        bitacoras.setBackground(new java.awt.Color(24, 78, 119));
+        bitacoras.setForeground(new java.awt.Color(245, 249, 250));
+        bitacoras.setText("Bitácoras");
+        bitacoras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        bitacoras.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
+        bitacoras.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        bitacoras.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        jMenuBar1.add(bitacoras);
+
         cerrarSesion.setBackground(new java.awt.Color(24, 78, 119));
         cerrarSesion.setForeground(new java.awt.Color(245, 249, 250));
         cerrarSesion.setText("Cerrar Cesión");
@@ -227,6 +237,7 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu bitacoras;
     private javax.swing.JMenu cerrarSesion;
     private javax.swing.JMenu facturar;
     private javax.swing.JMenu inventario;
