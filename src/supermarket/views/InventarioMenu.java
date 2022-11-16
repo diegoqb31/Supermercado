@@ -34,6 +34,7 @@ public class InventarioMenu extends javax.swing.JFrame {
         nuevoProducto = new javax.swing.JMenu();
         actualizarProducto = new javax.swing.JMenu();
         eliminarProducto = new javax.swing.JMenu();
+        ActualizarG = new javax.swing.JMenu();
         volver = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -53,19 +54,19 @@ public class InventarioMenu extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(111, 111, 111)
+                        .addGap(164, 164, 164)
                         .addComponent(jLabel3))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(214, 214, 214)
+                        .addGap(269, 269, 269)
                         .addComponent(jLabel1)))
-                .addContainerGap(119, Short.MAX_VALUE))
+                .addContainerGap(170, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap(64, Short.MAX_VALUE)
+                .addContainerGap(88, Short.MAX_VALUE)
                 .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(28, 28, 28)
+                .addGap(18, 18, 18)
                 .addComponent(jLabel1)
                 .addGap(165, 165, 165))
         );
@@ -116,6 +117,12 @@ public class InventarioMenu extends javax.swing.JFrame {
         });
         jMenuBar1.add(eliminarProducto);
 
+        ActualizarG.setBackground(new java.awt.Color(24, 78, 119));
+        ActualizarG.setForeground(new java.awt.Color(245, 249, 250));
+        ActualizarG.setText("Actulizar por Área");
+        ActualizarG.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
+        jMenuBar1.add(ActualizarG);
+
         volver.setBackground(new java.awt.Color(24, 78, 119));
         volver.setForeground(new java.awt.Color(245, 249, 250));
         volver.setText("Volver");
@@ -137,9 +144,7 @@ public class InventarioMenu extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
@@ -214,6 +219,7 @@ public class InventarioMenu extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenu ActualizarG;
     private javax.swing.JMenu actualizarProducto;
     private javax.swing.JMenu eliminarProducto;
     private javax.swing.JMenu inventario;
