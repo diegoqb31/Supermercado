@@ -24,6 +24,9 @@ public class Test {
     DetalleFactura dFac = new DetalleFactura();
     
     
+    BitacoraBO bbo = new BitacoraBO();
+    BitacoraFactura bf = new BitacoraFactura();
+
     String mensaje = "";
     
     public void cargarData() throws ParseException{

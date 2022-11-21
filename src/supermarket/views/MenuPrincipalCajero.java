@@ -145,6 +145,11 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
         bitacoras.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
         bitacoras.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
         bitacoras.setHorizontalTextPosition(javax.swing.SwingConstants.RIGHT);
+        bitacoras.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                bitacorasMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(bitacoras);
 
         cerrarSesion.setBackground(new java.awt.Color(24, 78, 119));
@@ -200,6 +205,12 @@ public class MenuPrincipalCajero extends javax.swing.JFrame {
         supermarket.views.InventarioMenu inventario = new supermarket.views.InventarioMenu();
         inventario.setVisible(true);
     }//GEN-LAST:event_inventarioMouseClicked
+
+    private void bitacorasMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_bitacorasMouseClicked
+        // TODO add your handling code here:
+        MostrarBitacoras showBits = new MostrarBitacoras();
+        showBits.setVisible(true);
+    }//GEN-LAST:event_bitacorasMouseClicked
 
     /**
      * @param args the command line arguments
