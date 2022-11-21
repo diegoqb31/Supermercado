@@ -15,6 +15,8 @@ import supermarket.entity.Producto;
 public class BitacoraModel extends AbstractTableModel implements TableModel {
 
     String[] col = {};
+    String[] col2 = {};
+    String[] col3 = {};
     List<Bitacora> fil;
     int type;
 
@@ -23,11 +25,11 @@ public class BitacoraModel extends AbstractTableModel implements TableModel {
         type = Type;
         switch (type) {
             case 1:
-                col = new String[]{"ARTICULO", "CANTIDAD", "SUBTOTAL", "TOTAL", "ID_CAJERO", "FECHA", "HORA"};
+                col = new String[]{"ARTICULO", "CANTIDAD", "SUBTOTAL", "TOTAL", "ID_CAJERO", "FECHA", "HORA"};               
             case 2:
-                //col = new String[]{"USUARIO", "NUMERO_CAJA", "FECHA_VENTA", "HORA_VENTA"};
+                col2 = new String[]{"USUARIO", "NUMERO_CAJA", "FECHA_VENTA", "HORA_VENTA"};
             case 3:
-                //col = new String[]{"ID", "OPERACION", "USUARIO", "FECHA", "HORA", "TABLA"};
+                col3 = new String[]{"OPERACION", "USUARIO", "FECHA", "HORA", "TABLA"};
         }
     }
 
@@ -42,9 +44,9 @@ public class BitacoraModel extends AbstractTableModel implements TableModel {
             case 1:
                 return 7;
             case 2:
-                //return 4;
+                return 4;
             case 3:
-                //return 6;
+                return 5;
         }
         return 0;
     }
@@ -55,9 +57,9 @@ public class BitacoraModel extends AbstractTableModel implements TableModel {
             case 1:
                 return (getColumnCount() > cols) ? col[cols] : "";
             case 2:
-                return (getColumnCount() > cols) ? col[cols] : "";
+                return (getColumnCount() > cols) ? col2[cols] : "";
             case 3:
-                return (getColumnCount() > cols) ? col[cols] : "";
+                return (getColumnCount() > cols) ? col3[cols] : "";
         }
         return "";
     }
