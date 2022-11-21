@@ -43,7 +43,7 @@ public class BitacoraDAO {
                 r.add(fromfactura(rs));
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se puede listar la tabla factura");
+            JOptionPane.showMessageDialog(null, "No se puede listar la tabla bitácora tabla factura");
         }
         return r;
     }
@@ -60,7 +60,7 @@ public class BitacoraDAO {
                 r.add(fromCajero(rs));
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se puede listar la tabla cajero");
+            JOptionPane.showMessageDialog(null, "No se puede listar la tabla bitácora tabla cajero");
         }
         return r;
     }
@@ -77,7 +77,7 @@ public class BitacoraDAO {
                 r.add(fromTbMaestra(rs));
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se puede listar la tabla maestra");
+            JOptionPane.showMessageDialog(null, "No se puede listar la tabla bitácora tablas maestra");
         }
         return r;
     }

@@ -3,16 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-<<<<<<< HEAD
+            <file>file:/C:/Users/XPC/OneDrive/Escritorio/Supermercado/src/supermarket/views/ActualizarProducto.java</file>
             <file>file:/C:/Users/XPC/OneDrive/Escritorio/Supermercado/src/supermarket/views/MenuPrincipalCajero.java</file>
+            <file>file:/C:/Users/XPC/OneDrive/Escritorio/Supermercado/src/supermarket/db/Conexion.java</file>
+            <file>file:/C:/Users/XPC/OneDrive/Escritorio/Supermercado/src/supermarket/views/MostrarBitacoras.java</file>
             <file>file:/C:/Users/XPC/OneDrive/Escritorio/Supermercado/src/supermarket/views/Login.java</file>
-=======
-            <file>file:/C:/Users/Kevin/Desktop/Version%20de%20Jairo/Supermercado/src/supermarket/entity/BitacoraFactura.java</file>
-            <file>file:/C:/Users/Kevin/Desktop/Version%20de%20Jairo/Supermercado/src/supermarket/entity/BitacoraTablaCajero.java</file>
-            <file>file:/C:/Users/Kevin/Desktop/Version%20de%20Jairo/Supermercado/src/supermarket/views/MostrarBitacoras.java</file>
-            <file>file:/C:/Users/Kevin/Desktop/Version%20de%20Jairo/Supermercado/src/supermarket/models/BitacoraModel.java</file>
-            <file>file:/C:/Users/Kevin/Desktop/Version%20de%20Jairo/Supermercado/src/supermarket/dao/BitacoraDAO.java</file>
->>>>>>> 070429380fe3c53d327badf8ffc010732a093fd9
+            <file>file:/C:/Users/XPC/OneDrive/Escritorio/Supermercado/src/supermarket/dao/BitacoraDAO.java</file>
         </group>
     </open-files>
 </project-private>

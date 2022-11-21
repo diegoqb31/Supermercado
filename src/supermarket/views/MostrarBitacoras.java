@@ -39,7 +39,7 @@ public class MostrarBitacoras extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         cbShow = new javax.swing.JComboBox<>();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         dtAll.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -86,6 +86,7 @@ public class MostrarBitacoras extends javax.swing.JFrame {
         );
 
         pack();
+        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
     /**
