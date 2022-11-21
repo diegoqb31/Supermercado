@@ -179,9 +179,3 @@ select * from Factura;
 select * from DETALLE_Factura;
 select * from BitacoraFactura;
 */
-
-select * from detalle_Factura;
-select * from usuario;
-select * from producto;
-select * from BitacoraTablasMaestras;
-select * from BitacoraTablaCajero;
