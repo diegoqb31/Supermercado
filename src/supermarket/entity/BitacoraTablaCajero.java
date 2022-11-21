@@ -62,11 +62,11 @@ public class BitacoraTablaCajero extends Bitacora{
     @Override
     public Object getBy(int col){
         switch (col){
-            case 0:return getID();
-            case 1:return getUSUARIO();
-            case 2:return getNUMERO_CAJA();
-            case 3:return getFECHA_VENTA();
-            case 4:return getHORA_VENTA();
+            //case 0:return getID();
+            case 0:return getUSUARIO();
+            case 1:return getNUMERO_CAJA();
+            case 2:return getFECHA_VENTA();
+            case 3:return getHORA_VENTA();
             default:return "";
         }
     }

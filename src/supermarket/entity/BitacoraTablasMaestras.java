@@ -72,12 +72,12 @@ public class BitacoraTablasMaestras extends Bitacora{
 
    public Object getBy(int col){
         switch (col){
-            case 0:return getID();
-            case 1:return getOPERACION();
-            case 2:return getUSUARIO();
-            case 3:return getFECHA();
-            case 4:return getHORA();
-            case 5:return getTABLA();
+            //case 0:return getID();
+            case 0:return getOPERACION();
+            case 1:return getUSUARIO();
+            case 2:return getFECHA();
+            case 3:return getHORA();
+            case 4:return getTABLA();
             default:return "";
         }
     }      

@@ -23,11 +23,11 @@ public class BitacoraModel extends AbstractTableModel implements TableModel {
         type = Type;
         switch (type) {
             case 1:
-                col = new String[]{"ID", "ARTICULO", "CANTIDAD", "SUBTOTAL", "TOTAL", "ID_CAJERO", "FECHA", "HORA"};
+                col = new String[]{"ARTICULO", "CANTIDAD", "SUBTOTAL", "TOTAL", "ID_CAJERO", "FECHA", "HORA"};
             case 2:
-                col = new String[]{"ID", "USUARIO", "NUMERO_CAJA", "FECHA_VENTA", "HORA_VENTA"};
+                //col = new String[]{"USUARIO", "NUMERO_CAJA", "FECHA_VENTA", "HORA_VENTA"};
             case 3:
-                col = new String[]{"ID", "OPERACION", "USUARIO", "FECHA", "HORA", "TABLA"};
+                //col = new String[]{"ID", "OPERACION", "USUARIO", "FECHA", "HORA", "TABLA"};
         }
     }
 
@@ -40,11 +40,11 @@ public class BitacoraModel extends AbstractTableModel implements TableModel {
     public int getColumnCount() {
         switch (type) {
             case 1:
-                return 8;
+                return 7;
             case 2:
-                return 5;
+                //return 4;
             case 3:
-                return 6;
+                //return 6;
         }
         return 0;
     }

@@ -91,14 +91,14 @@ public class BitacoraFactura extends Bitacora{
     
     public Object getBy(int col){
         switch (col){
-            case 0:return getID();
-            case 1:return getARTICULO();
-            case 2:return getCANTIDAD();
-            case 3:return getSUBTOTAL();
-            case 4:return getTOTAL();
-            case 5:return getID_CAJERO();
-            case 6:return getFECHA();
-            case 7:return getHORA();
+            //case 0:return getID();
+            case 0:return getARTICULO();
+            case 1:return getCANTIDAD();
+            case 2:return getSUBTOTAL();
+            case 3:return getTOTAL();
+            case 4:return getID_CAJERO();
+            case 5:return getFECHA();
+            case 6:return getHORA();
             default:return "";
         }
     }

@@ -119,8 +119,14 @@ public class InventarioMenu extends javax.swing.JFrame {
 
         ActualizarG.setBackground(new java.awt.Color(24, 78, 119));
         ActualizarG.setForeground(new java.awt.Color(245, 249, 250));
-        ActualizarG.setText("Actulizar por Área");
+        ActualizarG.setText("Actualizar por Área");
+        ActualizarG.setActionCommand("Actualizar por Área");
         ActualizarG.setFont(new java.awt.Font("Microsoft YaHei Light", 0, 14)); // NOI18N
+        ActualizarG.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ActualizarGMouseClicked(evt);
+            }
+        });
         jMenuBar1.add(ActualizarG);
 
         volver.setBackground(new java.awt.Color(24, 78, 119));
@@ -182,6 +188,13 @@ public class InventarioMenu extends javax.swing.JFrame {
         removeProd.setVisible(true);
         this.setVisible(false);
     }//GEN-LAST:event_eliminarProductoMouseClicked
+
+    private void ActualizarGMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ActualizarGMouseClicked
+        // TODO add your handling code here:
+        ActualizarProducto act = new ActualizarProducto();
+        act.setVisible(true);
+        this.setVisible(false);
+    }//GEN-LAST:event_ActualizarGMouseClicked
 
     /**
      * @param args the command line arguments

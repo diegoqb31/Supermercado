@@ -32,7 +32,7 @@ public class BitacoraDAO {
     private String mensaje = "";
 
     public List<Bitacora> listarBitacoraFactura(Connection con) {
-        String sql = "SELECT * FROM system.BitacoraFactura ORDER BY NUMERO";
+        String sql = "SELECT * FROM system.BitacoraFactura"; //ORDER BY ID";
         List<Bitacora> r = new ArrayList<>();
         Statement st = null;
         ResultSet rs = null;
@@ -49,7 +49,7 @@ public class BitacoraDAO {
     }
 
     public List<Bitacora> listarBitacoraTablaCajero(Connection con) {
-        String sql = "SELECT * FROM system.BitacoraTablaCajero ORDER BY NUMERO";
+        String sql = "SELECT * FROM system.BitacoraTablaCajero"; //ORDER BY ID";
         List<Bitacora> r = new ArrayList<>();
         Statement st = null;
         ResultSet rs = null;
@@ -60,13 +60,13 @@ public class BitacoraDAO {
                 r.add(fromCajero(rs));
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se puede listar la tabla factura");
+            JOptionPane.showMessageDialog(null, "No se puede listar la tabla cajero");
         }
         return r;
     }
 
     public List<Bitacora> listarBitacoraTablaMaestra(Connection con) {
-        String sql = "SELECT * FROM system.BitacoraTablasMaestras ORDER BY NUMERO";
+        String sql = "SELECT * FROM system.BitacoraTablasMaestras"; //ORDER BY ID";
         List<Bitacora> r = new ArrayList<>();
         Statement st = null;
         ResultSet rs = null;
@@ -77,7 +77,7 @@ public class BitacoraDAO {
                 r.add(fromTbMaestra(rs));
             }
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "No se puede listar la tabla factura");
+            JOptionPane.showMessageDialog(null, "No se puede listar la tabla maestra");
         }
         return r;
     }
@@ -87,7 +87,7 @@ public class BitacoraDAO {
     private BitacoraFactura fromfactura(ResultSet rs) throws ParseException {        
         try {
             BitacoraFactura r = new BitacoraFactura();
-            r.setID(rs.getInt("ID"));
+            //r.setID(rs.getInt("ID"));
             r.setARTICULO(rs.getString("ARTICULO"));
             r.setCANTIDAD(Integer.parseInt(rs.getString("CANTIDAD")));
             r.setSUBTOTAL(Float.parseFloat(rs.getString("SUBTOTAL")));
@@ -104,7 +104,7 @@ public class BitacoraDAO {
     private BitacoraTablaCajero fromCajero(ResultSet rs) throws ParseException {
         try {            
             BitacoraTablaCajero r = new BitacoraTablaCajero();            
-            r.setID(rs.getInt("ID"));
+            //r.setID(rs.getInt("ID"));
             r.setUSUARIO(Integer.parseInt(rs.getString("USUARIO")));
             r.setNUMERO_CAJA(Integer.parseInt(rs.getString("NUMERO_CAJA")));
             r.setFECHA_VENTA(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(rs.getString("FECHA_VENTA")));;
@@ -118,7 +118,7 @@ public class BitacoraDAO {
     private BitacoraTablasMaestras fromTbMaestra(ResultSet rs) throws ParseException {
         try {
             BitacoraTablasMaestras r = new BitacoraTablasMaestras();
-            r.setID(rs.getInt("ID"));
+            //r.setID(rs.getInt("ID"));
             r.setOPERACION(rs.getString("OPERACION"));
             r.setUSUARIO(rs.getString("USUARIO"));
             r.setFECHA(new SimpleDateFormat("yyyy-MM-dd hh:mm:ss").parse(rs.getString("FECHA")));;

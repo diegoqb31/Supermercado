@@ -128,10 +128,10 @@ public class MostrarBitacoras extends javax.swing.JFrame {
                         dtAll.setModel(new BitacoraModel(bbo.listarBitacoraFactura(),1));
                         break;
                     case "Cajero":
-                        dtAll.setModel(new BitacoraModel(bbo.listarBitacoraTablaCajero(),2));
+                        //dtAll.setModel(new BitacoraModel(bbo.listarBitacoraTablaCajero(),2));
                         break;
                     case "Tabla Maestra":
-                        dtAll.setModel(new BitacoraModel(bbo.listarBitacoraTablaMaestra(),3));
+                        //dtAll.setModel(new BitacoraModel(bbo.listarBitacoraTablaMaestra(),3));
                         break;
                     default:
                         break;                      
